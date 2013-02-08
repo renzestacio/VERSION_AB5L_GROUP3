@@ -1,5 +1,5 @@
 <?php
-  session_start();
+	session_start();
 	//hanggang hindi nakaset yung username hindi makakapasok yung gustong makaaccess dito
 	if(!isset($_SESSION['uname'])){
 		header("Location: admin_login.php");
@@ -16,9 +16,7 @@
 	</section><br/>
 	
 	<section id = "mylib">
-		<article>
-			anong magandang ipakita dito?
-		</article>
+		
 	</section>
 	
 	<section id = "nav">
@@ -27,6 +25,8 @@
 		?>
 	</section>
 	
+	
 <?php
 	require_once "include/admin_footer.php";
+	require_once "connection/close.php";
 ?>

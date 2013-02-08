@@ -1,5 +1,5 @@
 <?php
-  session_start();
+	session_start();
 	$_SESSION = $_POST;
 	//var_dump($_SESSION);
 	require_once "connection/connect.php";

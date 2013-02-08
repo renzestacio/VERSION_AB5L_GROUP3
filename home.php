@@ -1,5 +1,5 @@
 <?php
-  session_start();
+	session_start();
 	//hanggang hindi nakaset yung username hindi makakapasok yung gustong makaaccess dito
 	if(!isset($_SESSION['uname'])){
 		header("Location: login.php");

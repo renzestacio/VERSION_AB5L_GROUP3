@@ -1,5 +1,5 @@
 <?php
-  require_once "include/header.php";
+	require_once "include/header.php";
 	require_once "connection/connect.php";
 	require_once "connection/create_db.php";
 	require_once "connection/use_db.php";
@@ -19,8 +19,18 @@
 		password varchar(128) not null
 	)";
 	
+	$requests_table = "create table requests(
+		studnum varchar(64) primary key,
+		username varchar(128) not null,
+		password varchar(128) not null,
+		fname varchar(128),
+		lname varchar(128),
+		email varchar(64)
+	)";
+	
 	$query3 = mysql_query($student_table,$con);
 	$query4 = mysql_query($admin_table,$con);
+	$query5 = mysql_query($requests_table,$con);
 	
 ?>
 	<!--kailangang mag mukhang book shelf itong page na ito-->
