@@ -17,9 +17,13 @@
 			'{$_SESSION['studnum']}',
 			'{$_SESSION['uname']}',
 			'{$pass}',
-			'{$_SESSION['fname']}', 
-			'{$_SESSION['lname']}',
-			'{$_SESSION['email']}'
+			NULL,
+			NULL,			
+			'{$_SESSION['email']}',
+			NULL,
+			NULL,
+			NULL,
+			NULL
 		)";
 		$res = mysql_query($new_request, $con);
 		if (!$res) {
@@ -47,9 +51,13 @@
 					'{$_SESSION['studnum']}',
 					'{$_SESSION['uname']}',
 					'{$pass}',
-					'{$_SESSION['fname']}', 
-					'{$_SESSION['lname']}',
-					'{$_SESSION['email']}'
+					NULL,
+					NULL,			
+					'{$_SESSION['email']}',
+					NULL,
+					NULL,
+					NULL,
+					NULL
 				)";
 				$res1 = mysql_query($new_request, $con);
 				if (!$res1) {

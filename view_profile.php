@@ -29,6 +29,15 @@
 	echo "<table cellpadding=\"10\">";
 	while($row = mysql_fetch_assoc($result)){
 		echo "<tr><td align=\"center\">";
+		echo "<b>Avatar Image: </b>";
+		echo "</td><td>";
+		if(isset($_SESSION['imagefile']))
+			echo "<img src=get.php?id=". $_SESSION['uname'] .">";
+		else
+			echo "No Avatar Image";
+		echo "</td></tr>";
+
+		echo "<tr><td align=\"center\">";
 		echo "<b>Student Number : </b>";
 		echo "</td><td>";
 		echo $row['studnum'];

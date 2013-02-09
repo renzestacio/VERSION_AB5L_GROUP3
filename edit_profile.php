@@ -14,9 +14,42 @@
 
 
 <h3>You are now editting</h3>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+	File:<input type="file" name="image" value="<?php echo $_SESSION['imagename'];?>"><input type="submit" name="imagesubmit" value="Upload Image">
+</form>
+<?php
+	if((isset($_POST['imagesubmit']))){
+		mysql_select_db($db_name, $con);
+		$file=$_FILES['image']['tmp_name'];
+	
+		if(!isset($_FILES['image'])){
+			echo "No Avatar Image";
+		}else{
+			$image =  mysql_real_escape_string(file_get_contents($_FILES['image']['tmp_name']));
+			$image_name =  mysql_real_escape_string($_FILES['image']['name']);
+			$image_size = getimagesize($_FILES['image']['tmp_name']);
+		}
+		if($image_size == FALSE){
+			echo "that's not an image!";
+		}else{
+			if(!$insert=mysql_query("UPDATE student SET `imagename`='$image_name',`imagefile`='$image' WHERE `username`='$_SESSION[uname]'")){
+				echo "Upload Failed";
+			}
+			else{
+				//$lastid = mysql_insert_id();
+				echo "Image Uploaded<p/>Image<p/><img src=get.php?id=". $_SESSION['uname'] .">";
+				$_SESSION['imagename'] = $image_name;
+				$_SESSION['imagefile'] = $image;
+				header("Location: view_profile.php");				
+			}
+		}
+	}
+?>	
+
+
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
-	FName: <input type = "text" name = "newfname" required = "required" pattern = "[A-z]{1,}" value="<?php echo $_SESSION['fname']; ?>" /> <br/><br/>
-	Lname: <input type = "text" name = "newlname" required = "required" pattern = "[A-z]{1,}" value="<?php echo $_SESSION['lname']; ?>" /> <br/><br/>
+	FName: <input type = "text" name = "newfname" pattern = "[A-z]{1,}" value="<?php echo $_SESSION['fname']; ?>" /> <br/><br/>
+	Lname: <input type = "text" name = "newlname" pattern = "[A-z]{1,}" value="<?php echo $_SESSION['lname']; ?>" /> <br/><br/>
 	Email: <input type = "email"  name = "newemail" required = "required" value="<?php echo $_SESSION['email']; ?>" /> <br/><br/>
 	College: <input type = "text"  name = "newcollege" value="<?php echo $_SESSION['college']; ?>" /> <br/><br/>
 	Degree: <input type = "text"  name = "newdegree" value="<?php echo $_SESSION['degree']; ?>" /> <br/><br/>
@@ -28,8 +61,8 @@
 		<input type = "submit" name = "submit" value = "Accept Changes" />
 		<input type = "submit" name = "cancel" value = "Cancel Changes" />
 	<?php
-	if(isset($_POST['submit'])){			
-			mysql_select_db($db_name, $con);	
+	if(isset($_POST['submit'])){
+			mysql_select_db($db_name, $con);
 			$update = "UPDATE `student` SET `fname`='$_POST[newfname]', `lname`='$_POST[newlname]', `email`='$_POST[newemail]', `college`='$_POST[newcollege]', `degree`='$_POST[newdegree]' WHERE `username`='$_SESSION[uname]'";
 			mysql_query($update, $con) or die(mysql_error());
 			$_SESSION['fname'] = $_POST['newfname'];

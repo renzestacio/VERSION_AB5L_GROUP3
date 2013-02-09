@@ -5,29 +5,35 @@
 	require_once "connection/use_db.php";
 	
 	$student_table = "create table student(
-		studnum varchar(64) primary key,
-		username varchar(128) not null,
-		password varchar(128) not null,
-		fname varchar(128)not null,
-		lname varchar(128)not null,
-		email varchar(64),
-		college varchar(64),
-		degree varchar(64)		
+		studnum varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci primary key,
+		username varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		password varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		fname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		lname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		email varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		college varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		degree varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		imagename varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		imagefile blob
 	)";
 	
 	$admin_table = "create table admin(
 		id int(64) primary key auto_increment,
-		username varchar(128) not null,
-		password varchar(128) not null
+		username varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		password varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null
 	)";
 	
 	$requests_table = "create table requests(
-		studnum varchar(64) primary key,
-		username varchar(128) not null,
-		password varchar(128) not null,
-		fname varchar(128),
-		lname varchar(128),
-		email varchar(64)
+		studnum varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci primary key ,
+		username varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		password varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		fname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		lname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		email varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		college varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		degree varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		imagename varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		imagefile blob		
 	)";
 	
 	$query3 = mysql_query($student_table,$con);
