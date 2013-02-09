@@ -57,6 +57,19 @@
 		echo "</td><td>";
 		echo $row['lname'];
 		echo "</td></tr>";
+
+		echo "<tr><td align=\"center\">";
+		echo "<b>College : </b>";
+		echo "</td><td>";
+		echo $row['college'];
+		echo "</td></tr>";		
+
+		echo "<tr><td align=\"center\">";
+		echo "<b>Degree : </b>";
+		echo "</td><td>";
+		echo $row['degree'];
+		echo "</td></tr>";
+		
 	}
 
 	echo "</table>";

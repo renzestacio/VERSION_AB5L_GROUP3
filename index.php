@@ -10,7 +10,9 @@
 		password varchar(128) not null,
 		fname varchar(128)not null,
 		lname varchar(128)not null,
-		email varchar(64)
+		email varchar(64),
+		college varchar(64),
+		degree varchar(64)		
 	)";
 	
 	$admin_table = "create table admin(

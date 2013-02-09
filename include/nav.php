@@ -7,6 +7,7 @@
 		<h3 class = "titles">Profile<h3>
 			<div class = "content">
 				<p class = "links"><a href = "view_profile.php">view</a></p>
+				<p class = "links"><a href = "edit_profile.php">edit</a></p>
 			</div>
 			
 		<h3 class = "titles">Books<h3>
