@@ -1,11 +1,11 @@
 <?php
 	/*creator notes: V 0.1
 	*	-only change of password requires old password
-	*	-code for change of password still needs improvement (it works but looks ugly IMHO) (TBD add js/jQuery for error messages, etc.)
-	*	-add image avatar for every user (TBD)
+	*	-code for change of password still needs improvement(TBD add js/jQuery for error messages, etc.)
 	*/
 	session_start();
 	include 'connection/connect.php';
+	include 'image-resize.php';
 	//just to make sure that the user is online when accessing this page
 	if(!isset($_SESSION['uname'])){
 		header("Location: login.php");
@@ -15,32 +15,34 @@
 
 <h3>You are now editting</h3>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-	File:<input type="file" name="image" value="<?php echo $_SESSION['imagename'];?>"><input type="submit" name="imagesubmit" value="Upload Image">
+	File:<input type="file" name="image" >
+	<input type="submit" name="imagesubmit" value="Upload Image">
+	<?php echo "<img src=get.php?id=". $_SESSION['uname'] .">"; ?>
 </form>
 <?php
 	if((isset($_POST['imagesubmit']))){
-		mysql_select_db($db_name, $con);
-		$file=$_FILES['image']['tmp_name'];
-	
-		if(!isset($_FILES['image'])){
-			echo "No Avatar Image";
+		if( ! is_uploaded_file($_FILES['image']['tmp_name']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK)
+		{
+				exit('File not uploaded. Possibly too large or no file selected.');
 		}else{
-			$image =  mysql_real_escape_string(file_get_contents($_FILES['image']['tmp_name']));
-			$image_name =  mysql_real_escape_string($_FILES['image']['name']);
-			$image_size = getimagesize($_FILES['image']['tmp_name']);
-		}
-		if($image_size == FALSE){
-			echo "that's not an image!";
-		}else{
-			if(!$insert=mysql_query("UPDATE student SET `imagename`='$image_name',`imagefile`='$image' WHERE `username`='$_SESSION[uname]'")){
-				echo "Upload Failed";
-			}
-			else{
-				//$lastid = mysql_insert_id();
-				echo "Image Uploaded<p/>Image<p/><img src=get.php?id=". $_SESSION['uname'] .">";
-				$_SESSION['imagename'] = $image_name;
-				$_SESSION['imagefile'] = $image;
-				header("Location: view_profile.php");				
+				mysql_select_db($db_name, $con);
+				$file=$_FILES['image']['tmp_name'];
+				$type=$_FILES['image']['type'];	
+				$image_size = getimagesize($file);
+			if($image_size == FALSE){
+				echo "that's not an image!";
+			}else{
+				$image = imageresize($file, $type);
+				$image =  mysql_real_escape_string($image);
+				//uncomment if no resize needed
+				//$image =  mysql_real_escape_string(file_get_contents($_FILES['image']['tmp_name']));
+				$image_name =  mysql_real_escape_string($_FILES['image']['name']);			
+				if(!$insert=mysql_query("UPDATE student SET `imagename`='$image_name',`imagefile`='$image' WHERE `username`='$_SESSION[uname]'")){
+					echo "Upload Failed";
+				}
+				else{
+					header("Location: view_profile.php");				
+				}
 			}
 		}
 	}

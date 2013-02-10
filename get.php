@@ -7,4 +7,4 @@
 	$image = $image['imagefile'];
 	header("Content-type: image/jpeg");
 	echo $image;
-	?>
+?>
