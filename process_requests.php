@@ -18,9 +18,13 @@
 				'{$row['studnum']}',
 				'{$row['username']}',
 				'{$row['password']}',
-				'{$row['fname']}',
-				'{$row['lname']}',
-				'{$row['email']}'
+				NULL,
+				NULL,
+				'{$row['email']}',
+				NULL,
+				NULL,
+				NULL,
+				NULL				
 			)";
 			$inserted = mysql_query($add, $con);
 		}

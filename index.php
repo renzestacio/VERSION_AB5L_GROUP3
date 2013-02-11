@@ -27,19 +27,12 @@
 		studnum varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci primary key ,
 		username varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
 		password varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
-		fname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci,
-		lname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci,
-		email varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
-		college varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
-		degree varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
-		imagename varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
-		imagefile blob		
+		email varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci
 	)";
 	
 	$query3 = mysql_query($student_table,$con);
 	$query4 = mysql_query($admin_table,$con);
-	$query5 = mysql_query($requests_table,$con);
-	
+	$query5 = mysql_query($requests_table,$con);	
 ?>
 	<!--kailangang mag mukhang book shelf itong page na ito-->
 	<section id = "first_row">
