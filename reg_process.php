@@ -16,14 +16,8 @@
 		$new_request = "insert into requests values(
 			'{$_SESSION['studnum']}',
 			'{$_SESSION['uname']}',
-			'{$pass}',
-			NULL,
-			NULL,			
-			'{$_SESSION['email']}',
-			NULL,
-			NULL,
-			NULL,
-			NULL
+			'{$pass}',		
+			'{$_SESSION['email']}'
 		)";
 		$res = mysql_query($new_request, $con);
 		if (!$res) {
@@ -52,12 +46,12 @@
 					'{$_SESSION['uname']}',
 					'{$pass}',
 					NULL,
-					NULL,			
+					NULL,						
 					'{$_SESSION['email']}',
 					NULL,
 					NULL,
 					NULL,
-					NULL
+					NULL					
 				)";
 				$res1 = mysql_query($new_request, $con);
 				if (!$res1) {
