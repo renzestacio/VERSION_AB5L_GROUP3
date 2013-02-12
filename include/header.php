@@ -11,7 +11,7 @@
 	
 	<body>
 		<header> 
-			<a href = "#"><h1>The Athenaeum</h1></a>
+			<a href = "#"><img src="Athenaeum_Header.jpg" id="HEADER" alt="The Athenaeum"/></a>
 		</header>
 		<br/>
 		
