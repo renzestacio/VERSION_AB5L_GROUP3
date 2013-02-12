@@ -3,33 +3,37 @@
 }
 
 body{
-	width: 90%;
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 20px;
 	font-size: 14px;
+	background-image: url('Athenaeum_Background.jpg');
 }
 
 header{
 	text-align: right;
-	border: 2px solid black;
 	background-color: #784421;
 }
 
+	img#HEADER{
+		bottom: 5px;
+		width: 100%;
+		height: 100%;
+	}
+
 footer{
 	text-align: center;
-	border: 3px solid black;
-	border-radius:10px;
+	border: 1px solid black;
 	background-color: #784421;
 	color:white;
 	padding:3px;
 }
 
-a.footer_links{
-	color: #aef124;
-	font-weight: bolder;
-	
-}
+	a.footer_links{
+		color: #aef124;
+		font-weight: bolder;
+		
+	}
 
 a{
 	text-decoration: none;
@@ -37,43 +41,72 @@ a{
 }
 
 /*---------------------------------index.php-------------------------------*/
+section#left_side{
+	color:white;
+	width: 60%;
+	top: 390px;
+}
+	img#SHELF{
+		bottom: 5px;
+		width: 630px;
+		height: 670px;
+	}
+
 section#first_row{
 	border: 1px solid black;
 	padding: 15px;
 	background-color: #784421;
+	color:white;
+	width: 30%;
+	position: absolute;
+	left: 57.5%;
+	top: 58.5%;
 }
+	article#search{
+		text-align:end;
+	}
 
-article#register{
-	border: 1px solid black;
-	width: 260px;
-	padding: 7px;
-	background-color: red;
-}
-
-article#login{
-	border: 1px solid black;
-	width: 300px;
-	padding: 10px;
-	background-color: orange;
-}
 
 section#second_row{
 	border: 1px solid black;
 	padding: 15px;
 	background-color: #784421;
+	color:white;
+	width: 30%;
+	position: absolute;
+	left: 57.5%;
+	top: 68.5%;
 }
 
-article#search{
-	text-align:end;
-}
+	article#register{
+		width: 200px;
+		padding: 10px;
+		margin: 5px;
+		background-color: #aef124;
+		font-weight: bolder;
+	}
 
+	article#login{
+		width: 200px;
+		padding: 10px;
+		margin: 5px;
+		background-color: #aef199;
+		font-weight: bolder;
+	}
+	a{
+		color: #784421;
+	}
+	
 section#third_row{
 	border: 1px solid black;
 	padding: 15px;
 	background-color: #784421;
 	color:white;
+	width: 30%;
+	position: absolute;
+	left: 57.5%;
+	top: 87.5%;
 }
-
 
 /*----------------------------------login.php--------------------------------------*/
 section#login{
@@ -98,51 +131,49 @@ article#login_form{
 
 section#reg{
 	border: 3px solid black;
-	border-radius:10px;
 	padding: 15px;
 	background-color: #784421;
 	color:white;
 	width:46%;
-	height: 550px;
+	height: 500px;
 }
 
-article#reg_form{
-	border: 2px solid black;
-	padding: 15px;
-	background-color: #784421;
-	color:white;
-	text-align:center;
-	height:90%;
-}
+	article#reg_form{
+		border: 2px solid black;
+		padding: 15px;
+		background-color: #784421;
+		color:white;
+		text-align:center;
+		height:90%;
+	}
 
 section#agreement{
 	border: 3px solid black;	
-	border-radius:10px;
 	padding: 15px;
 	background-color: #784421;
 	color:white;
-	width:42.3%;
+	width:35.3%;
 	position:absolute;
-	left: 50%;
-	bottom: 57.2%;
+	left: 52%;
+	top: 83.5%;
 }
 
-article#terms{
-	border: 2px dashed black;
-}
+	article#terms{
+		border: 2px dashed black;
+	}
 
-h3#terms{
-	text-align:center;
-	color:black;
-}
+	h3#terms{
+		text-align:center;
+		color:black;
+	}
 
-p#terms{
-	text-indent: 2em;
-	border: 1px dashed white;
-	width: 96%;
-	position: relative;
-	left: 1.5%;
-}
+	p#terms{
+		text-indent: 2em;
+		border: 1px dashed white;
+		width: 96%;
+		position: relative;
+		left: 1.5%;
+	}
 
 /*----------------------------------home.php--------------------------------------*/
 section#greetings{
@@ -162,23 +193,21 @@ section#mylib{
 	padding: 15px;
 	background-color: #784421;
 	color:white;
-	width:75%;
-	border-radius: 10px;
+	width:73%;
 	height: 400px;
 	text-align:justified;
 }
 
 section#nav{
 	border: 1px solid black;
-	border-radius: 10px;
 	padding: 10px;
 	background-color: #784421;
 	color:black;
 	text-align: center;
 	width: 16%;
 	position:absolute;
-	right:5%;
-	top: 26.5%;
+	right:10%;
+	top: 66%;
 }
 
 
