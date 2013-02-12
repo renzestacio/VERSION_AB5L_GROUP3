@@ -35,21 +35,25 @@
 	$query5 = mysql_query($requests_table,$con);	
 ?>
 	<!--kailangang mag mukhang book shelf itong page na ito-->
+	<section id = "left_side">
+		<img src="Athenaeum_Shelf.jpg" id="SHELF" alt="The Athenaeum"/>
+	</section>
+	
 	<section id = "first_row">
+		<article id = "search">
+			<form action = "" method = "post">
+				<input type = "text" name = "search" size="46"/>
+				<input type = "submit" value = "Search book"/>
+			</form>
+		</article>
+	</section>
+	
+	<section id = "second_row">
 		<article id = "register">
 			<a href = "register.php"> Sign Up </a>
 		</article>
 		<article id = "login">
 			<a href = "login.php"> Log In </a>
-		</article>
-	</section>
-	
-	<section id = "second_row">
-		<article id = "search">
-			<form action = "" method = "post">
-				<input type = "text" name = "search" />
-				<input type = "submit" value = "Search book"/>
-			</form>
 		</article>
 	</section>
 	
