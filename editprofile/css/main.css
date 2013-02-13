@@ -1,0 +1,224 @@
+*{
+	font-family: Century Gothic;
+}
+
+body{
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+header{
+	text-align: right;
+	border: 2px solid black;
+	background-color: #784421;
+}
+
+footer{
+	text-align: center;
+	border: 3px solid black;
+	border-radius:10px;
+	background-color: #784421;
+	color:white;
+	padding:3px;
+}
+
+a.footer_links{
+	color: #aef124;
+	font-weight: bolder;
+	
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+/*---------------------------------index.php-------------------------------*/
+section#first_row{
+	border: 1px solid black;
+	padding: 15px;
+	background-color: #784421;
+	width: 70%;
+	height: 150px;
+}
+
+article#register{
+	border: 1px solid black;
+	width: 260px;
+	padding: 7px;
+	background-color: red;
+}
+
+article#login{
+	border: 1px solid black;
+	width: 300px;
+	padding: 10px;
+	background-color: orange;
+}
+
+section#second_row{
+	border: 1px solid black;
+	padding: 15px;
+	background-color: #784421;
+	width: 70%;
+	height: 150px;
+}
+
+article#search{
+	text-align:end;
+}
+
+section#third_row{
+	border: 1px solid black;
+	padding: 15px;
+	background-color: #784421;
+	color:white;
+	width: 70%;
+	
+}
+
+
+/*----------------------------------login.php--------------------------------------*/
+section#login{
+	border: 3px solid black;
+	padding: 15px;
+	background-color: #784421;
+	color:white;
+}
+
+article#login_form{
+	border: 2px solid black;
+	padding: 15px;
+	background-color: #784421;
+	color:white;
+	width: 30%;
+	text-align:center;
+	position:relative;
+	left: 35.5%;
+}
+
+/*----------------------------------register.php--------------------------------------*/
+
+section#reg{
+	border: 3px solid black;
+	border-radius:10px;
+	padding: 15px;
+	background-color: #784421;
+	color:white;
+	width:46%;
+	height: 550px;
+}
+
+article#reg_form{
+	border: 2px solid black;
+	padding: 15px;
+	background-color: #784421;
+	color:white;
+	text-align:center;
+	height:90%;
+}
+
+section#agreement{
+	border: 3px solid black;	
+	border-radius:10px;
+	padding: 15px;
+	background-color: #784421;
+	color:white;
+	width:42.3%;
+	position:absolute;
+	left: 50%;
+	bottom: 57.2%;
+}
+
+article#terms{
+	border: 2px dashed black;
+}
+
+h3#terms{
+	text-align:center;
+	color:black;
+}
+
+p#terms{
+	text-indent: 2em;
+	border: 1px dashed white;
+	width: 96%;
+	position: relative;
+	left: 1.5%;
+}
+
+/*----------------------------------home.php--------------------------------------*/
+section#greetings{
+	border: 2px solid black;
+	padding: 4px;
+	background-color: #784421;
+	color:black;
+	text-align: right;
+}
+
+a#uname{
+	color:white;
+}
+
+section#mylib{
+	border: 3px solid black;
+	padding: 15px;
+	background-color: #784421;
+	color:white;
+	width:75%;
+	border-radius: 10px;
+	
+	text-align:justified;
+}
+
+nav{
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 10px;
+	background-color: #784421;
+	color:black;
+	text-align: center;
+	width: 16%;
+	position:absolute;
+	right:5%;
+	top: 26.5%;
+}
+
+
+/*----------------------------------admin_nav.php--------------------------------------*/
+
+div#accordion{
+	border: 4px solid black;
+	border-radius: 10px;
+	background-color: #784421;
+}
+
+h3.titles{
+	border-radius: 10px;
+	background-color:black;
+	text-align:center;
+	padding: 5px;
+	color:yellow;
+}
+
+p.links{
+	padding:0px;
+	text-align:center;
+	color:white;
+	border-bottom: 1px solid black;
+}
+
+div#content{
+	border: 2px solid green;
+	color:black;
+}
+
+/*----------------------------------add_book.php--------------------------------------*/
+img{
+	height: 210px;
+	width: 150px;
+	border: 2px solid white;
+}

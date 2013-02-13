@@ -41,15 +41,24 @@ a{
 }
 
 /*---------------------------------index.php-------------------------------*/
+div#abc{
+	min-height:100%;
+	border:transparent thick solid;
+	background-color:white;
+	margin:auto;
+	min-height: 99%;
+}
+
 section#left_side{
 	color:white;
 	width: 60%;
-	top: 390px;
+	height: 100%;
+	top: 39%;
 }
 	img#SHELF{
 		bottom: 5px;
-		width: 630px;
-		height: 670px;
+		width: 97%;
+		height: 100%;
 	}
 
 section#first_row{
@@ -57,10 +66,12 @@ section#first_row{
 	padding: 15px;
 	background-color: #784421;
 	color:white;
-	width: 30%;
 	position: absolute;
+	width: 30%;
+	height: auto;
+	
 	left: 57.5%;
-	top: 58.5%;
+	top: 59%;
 }
 	article#search{
 		text-align:end;
@@ -71,15 +82,16 @@ section#second_row{
 	border: 1px solid black;
 	padding: 15px;
 	background-color: #784421;
+	position: absolute;
 	color:white;
 	width: 30%;
-	position: absolute;
+	height: auto;
 	left: 57.5%;
-	top: 68.5%;
+	top: 70%;
 }
 
 	article#register{
-		width: 200px;
+		width: 40%;
 		padding: 10px;
 		margin: 5px;
 		background-color: #aef124;
@@ -87,14 +99,14 @@ section#second_row{
 	}
 
 	article#login{
-		width: 200px;
+		width: 40%;
 		padding: 10px;
 		margin: 5px;
 		background-color: #aef199;
 		font-weight: bolder;
 	}
 	a{
-		color: #784421;
+		color: black;
 	}
 	
 section#third_row{
@@ -103,9 +115,10 @@ section#third_row{
 	background-color: #784421;
 	color:white;
 	width: 30%;
+	height: auto;
 	position: absolute;
 	left: 57.5%;
-	top: 87.5%;
+	top: 90%;
 }
 
 /*----------------------------------login.php--------------------------------------*/
@@ -188,28 +201,25 @@ a#uname{
 	color:white;
 }
 
-section#mylib{
-	border: 3px solid black;
-	padding: 15px;
-	background-color: #784421;
-	color:white;
-	width:73%;
-	height: 400px;
-	text-align:justified;
+section#home_shelf{
+	width: 75%;
 }
+	img#home_SHELF{
+		width: 100%;
+		height: 100%;
+	}
 
 section#nav{
 	border: 1px solid black;
-	padding: 10px;
 	background-color: #784421;
 	color:black;
 	text-align: center;
-	width: 16%;
 	position:absolute;
+	width: 16%;
+	height: auto;
 	right:10%;
-	top: 66%;
+	top: 65.9%;
 }
-
 
 /*----------------------------------admin_nav.php--------------------------------------*/
 
@@ -217,6 +227,8 @@ div#accordion{
 	border: 4px solid black;
 	border-radius: 10px;
 	background-color: #784421;
+	position: relative;
+	width:auto;
 }
 
 h3.titles{
@@ -227,14 +239,112 @@ h3.titles{
 	color:yellow;
 }
 
-p.links{
+a.links{
 	padding:0px;
 	text-align:center;
 	color:white;
+	text-align:center;
 	border-bottom: 1px solid black;
 }
 
 div#content{
 	border: 2px solid green;
 	color:black;
+}
+
+/*----------------------------------------edit_profile.php----------------------------------------*/
+
+section#left_side_edit{
+	color:white;
+	width: 60%;
+	top: 20%;
+	border: 3px solid black;	
+	padding: 15px;
+	background-color: #784421;
+}
+
+tr.label{
+
+}
+tr.field{
+	
+}
+
+/*----------------------------------------view_profile.php----------------------------------------*/
+
+section#avatar{
+	border: 3px solid black;
+	padding: 15px;
+	background-color: #784421;
+	color:white;
+	width:25%;
+	height:100%;
+	text-align:justified;
+}
+
+section#info{
+	border: 3px solid black;
+	background-color: #784421;
+	padding: 15px;
+	color:white;
+	width:25%;
+	height: 40%;
+	text-align:justified;
+	margin-top: 20px;
+}
+
+section#search_tab{
+	border: 3px solid black;
+	background-color: #784421;
+	padding: 15px;
+	color:white;
+	width:75%;
+	height: auto;
+	text-align:justified;
+	margin-top: 20px;
+}
+
+section#search_result_tab{
+	border: 3px solid black;
+	background-color: #784421;
+	padding: 15px;
+	color:white;
+	width:75%;
+	height: auto;
+	text-align:justified;
+	margin-top: 20px;
+}
+
+section#view_shelf{
+	position: absolute;
+	width: 37%;
+	height: 75%;
+	top: 65%;
+	left: 34%;
+}
+	img#view_SHELF{
+		width: 100%;
+		height: 80%;
+	}
+
+	
+/*-------------------------user_requests.php-------------------*/
+section#table_user_requests{
+	color:white;
+	width: 74%;
+	top: 20%;
+	border: 3px solid black;	
+	padding: 15px;
+	background-color: #784421;
+}
+
+/*-------------------------search_user.php-------------------*/
+
+section#left_side_search_user{
+	color:white;
+	width: 40%;
+	top: 20%;
+	border: 3px solid black;	
+	padding: 15px;
+	background-color: #784421;
 }

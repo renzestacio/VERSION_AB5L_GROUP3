@@ -78,7 +78,7 @@
 		echo "</article>";
 		echo "</section><br/>";
 		
-		echo "<section id=\"search_result_tab\">";
+		echo "<section id=\"mylib\">";
 		// +---------------+----------------+
 		// | Table-ized the result of query	|
 		// +---------------+----------------+
@@ -111,9 +111,9 @@
 		// |		End of Table :)			|
 		// +---------------+----------------+
 		echo "</section>";
-		echo "<section id = \"nav\">";
+		echo "<nav id = \"nav\">";
 			require_once "include/admin_nav.php";
-		echo "</section>";
+		echo "</nav>";
 		require_once "include/admin_footer.php";
 		
 ?>

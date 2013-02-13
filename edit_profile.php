@@ -10,20 +10,35 @@
 	if(!isset($_SESSION['uname'])){
 		header("Location: login.php");
 	}
+	
+	require_once "include/header.php";
 ?>
 
+<section id = "left_side_edit">
 
 <h3>You are now editting</h3>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
-	File:<input type="file" name="image" >
-	<input type="submit" name="imagesubmit" value="Upload Image">
-	<?php echo "<img src=get.php?id=". $_SESSION['uname'] .">"; ?>
+	
+	<table>
+	
+	<tr class="label">File</tr>
+	<tr><input type="file" name="image" ></tr>
+	<tr><input type="submit" name="imagesubmit" value="Upload Image"></tr>
+	<?php
+		if(isset($_SESSION['imagefile']))
+			echo "<img src=get.php?id=". $_SESSION['uname'] .">"; 
+		else
+			echo "No image";
+	?>
+	<input type="submit" name="imageremove" value="Remove Image">
+	
+	</table>
 </form>
 <?php
 	if((isset($_POST['imagesubmit']))){
 		if( ! is_uploaded_file($_FILES['image']['tmp_name']) || $_FILES['image']['error'] !== UPLOAD_ERR_OK)
 		{
-				exit('File not uploaded. Possibly too large or no file selected.');
+				echo"File not uploaded. Possibly too large or no file selected.";
 		}else{
 				mysql_select_db($db_name, $con);
 				$file=$_FILES['image']['tmp_name'];
@@ -37,31 +52,69 @@
 				//uncomment if no resize needed
 				//$image =  mysql_real_escape_string(file_get_contents($_FILES['image']['tmp_name']));
 				$image_name =  mysql_real_escape_string($_FILES['image']['name']);			
-				if(!$insert=mysql_query("UPDATE student SET `imagename`='$image_name',`imagefile`='$image' WHERE `username`='$_SESSION[uname]'")){
+				if(!$insert=mysql_query("UPDATE `student` SET `imagename`='$image_name',`imagefile`='$image' WHERE `username`='$_SESSION[uname]'")){
 					echo "Upload Failed";
 				}
 				else{
+					$_SESSION['imagefile'] = $image;
 					header("Location: view_profile.php");				
 				}
 			}
+		}
+	}
+	if(isset($_POST['imageremove'])){
+		mysql_select_db($db_name, $con);
+		if(isset($_SESSION['imagefile'])){
+			if(!$insert=mysql_query("UPDATE `student` SET `imagename`=NULL,`imagefile`=NULL WHERE `username`='$_SESSION[uname]'")){
+				echo "Remove Failed";
+			}
+			else{
+				$_SESSION['imagefile'] = NULL;
+				header("Location: view_profile.php");
+			}
+		}
+		else{
+			//tempo for javascript
+			echo "No image already";
 		}
 	}
 ?>	
 
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
-	FName: <input type = "text" name = "newfname" pattern = "[A-z]{1,}" value="<?php echo $_SESSION['fname']; ?>" /> <br/><br/>
-	Lname: <input type = "text" name = "newlname" pattern = "[A-z]{1,}" value="<?php echo $_SESSION['lname']; ?>" /> <br/><br/>
-	Email: <input type = "email"  name = "newemail" required = "required" value="<?php echo $_SESSION['email']; ?>" /> <br/><br/>
-	College: <input type = "text"  name = "newcollege" value="<?php echo $_SESSION['college']; ?>" /> <br/><br/>
-	Degree: <input type = "text"  name = "newdegree" value="<?php echo $_SESSION['degree']; ?>" /> <br/><br/>
-
-	Old Passw: 	<input type = "password" name = "oldpass"  pattern = "[A-z]{6,}"  /> <br/><br/>
-	New Passw: <input type = "password" name = "pass1"  pattern = "[A-z]{6,}" /> <br/><br/>
-	Repeat New Passw: 	<input type = "password" name = "pass2"  pattern = "[A-z]{6,}"  /> <br/><br/> 
-
-		<input type = "submit" name = "submit" value = "Accept Changes" />
-		<input type = "submit" name = "cancel" value = "Cancel Changes" />
+	<br/>
+	<table>
+	<tr class="label" >First Name</tr>
+	<tr class="field"><input type = "text" name = "newfname" pattern = "[A-z]{1,}" value="<?php echo $_SESSION['fname']; ?>" size="40" /></tr>
+	<br/><br />
+	<tr class="label">Last Name</tr> 
+	<tr class="field"><input type = "text" name = "newlname" pattern = "[A-z]{1,}" value="<?php echo $_SESSION['lname']; ?>" size="40"/></tr>
+	<br /><br />
+	<tr class="label">Email Address </tr>
+	<tr class="field"><input type = "email"  name = "newemail" required = "required" value="<?php echo $_SESSION['email']; ?>" size="40"/></tr>
+	<br /><br />
+	<tr class="label">College </tr>
+	<tr class="field"><input type = "text"  name = "newcollege" value="<?php echo $_SESSION['college']; ?>" size="40"/></tr>
+	<br /><br />
+	<tr class="label">Degree</tr>
+	<tr class="field"><input type = "text"  name = "newdegree" value="<?php echo $_SESSION['degree']; ?>" size="40"/></tr>
+	<br /><br />
+	<tr class="label">Old Password </tr>
+	<tr class="field"><input type = "password" name = "oldpass"  pattern = "[A-z]{6,}"  size="40"/></tr>
+	<br /><br />
+	<tr class="label">New Password </tr>
+	<tr class="field"><input type = "password" name = "pass1"  pattern = "[A-z]{6,}" size="40"/></tr>
+	<br /><br />
+	<tr class="label">Repeat New Password </tr>
+	<tr class="field"><input type = "password" name = "pass2"  pattern = "[A-z]{6,}" size="40" /></tr>
+	<br /><br />
+	<tr><input type = "submit" name = "submit" value = "Accept Changes" /></tr>
+	<tr><input type = "submit" name = "cancel" value = "Cancel Changes" /></tr>
+	
+	
+	
+	</table>
+	
 	<?php
 	if(isset($_POST['submit'])){
 			mysql_select_db($db_name, $con);
@@ -85,7 +138,12 @@
 	}
 	?>
 </form>
+</section>
 	
+<?php
+	require_once "include/footer.php";
+	require_once "connection/close.php";
+?>
 
 
 	

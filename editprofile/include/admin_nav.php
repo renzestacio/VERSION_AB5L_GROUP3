@@ -7,16 +7,16 @@
 		<div id="accordion">
 			<h3 class = "titles">User<h3>
 				<div class = "content">
-					<p><a href = "user_requests.php" class = "links">Add</a></p>
-					<p><a href = "search_user.php" class = "links">Search</a></p>
+					<p class = "links"><a href = "user_requests.php">Add</a></p>
+					<p class = "links"><a href = "search_user.php">Search</a></p>
 					
 				</div>
 				
 			<h3 class = "titles">Books<h3>
 			<div class = "content">
-				<p><a href = "#" class = "links">Add</a></p>
-				<p><a href = "#" class = "links">Edit</a></p>
-				<p><a href = "#" class = "links">Remove</a></p>
+				<p class = "links"><a href = "add_book.php">Add</a></p>
+				<p class = "links"><a href = "#">Edit</a></p>
+				<p class = "links"><a href = "#">Remove</a></p>
 			</div>
 				
 		</div>

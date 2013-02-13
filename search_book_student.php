@@ -4,7 +4,7 @@
 	if(!isset($_SESSION['uname'])){
 		header("Location: login.php");
 	}
-	require_once "include/admin_header.php";
+	require_once "include/header.php";
 	require_once "connection/connect.php";
 	require_once "connection/use_db.php";
 ?>
@@ -12,7 +12,7 @@
 	<section id = "greetings">
 		<article>
 			<?php
-				echo "Welcome, <em><a href = \"admin_home.php\" id = \"uname\">{$_SESSION['uname']}</a></em> ! 	| 	<a href = \"signout.php\">Sign Out</a>";
+				echo "Welcome, <em><a href = \"home.php\" id = \"uname\">{$_SESSION['uname']}</a></em> ! 	| 	<a href = \"signout.php\">Sign Out</a>";
 			?>
 		</article>
 	</section><br/>
@@ -25,7 +25,7 @@
 				+-------------+-------------+
 			-->
 			Search user according to: </br>
-			<form action="search_user_result.php" method="post">
+			<form action="search_book_student_result.php" method="post">
 				
 				<!--
 				******this is for sorting... (not yet implemented)******
@@ -39,17 +39,14 @@
 				
 				<table cellpadding="10">
 				<tr>
-				<td><label for = "studnum">Student Number: </label></td>
-				<td><input type="text" name="studnum" pattern="[0-9]{0,4}-{0,1}[0-9]{0,5}" /></td>
+				<td><label for = "Title">Title: </label></td>
+				<td><input type="text" name="title" pattern="[A-z]{0,}" /></td>
 				</tr>
 				<tr>
-				<td><label for = "fname">First Name: </label></td>
-				<td><input type="text" name="fname" pattern="[A-z]{0,}" /></td>
+				<td><label for = "Author">Author: </label></td>
+				<td><input type="text" name="author" pattern="[A-z]{0,}" /></td>
 				</tr>
 				<tr>
-				<td><label for = "studnum">Last Name: </label></td>
-				<td><input type="text" name="lname" pattern="[A-z]{0,}" /></td>
-				</tr>
 				<tr><td><input type="submit" value="Search"></td></tr>
 				</table>
 			</form>
@@ -58,11 +55,11 @@
 	
 	<section id = "nav">
 		<?php
-			require_once "include/admin_nav.php";
+			require_once "include/nav.php";
 		?>
 	</section>
 
 <?php
-	require_once "include/admin_footer.php";
+	require_once "include/footer.php";
 	require_once "connection/close.php";
 ?>

@@ -12,7 +12,7 @@
 			
 		<h3 class = "titles">Books<h3>
 			<div class = "content">
-				<p class = "links"><a href = "search_book_student.php">search</a></p>
+				<p class = "links"><a href = "#">view</a></p>
 				anong ilalagay dito?
 			</div>
 				

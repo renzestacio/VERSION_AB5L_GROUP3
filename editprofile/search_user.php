@@ -17,7 +17,7 @@
 		</article>
 	</section><br/>
 	
-	<section id = "search_tab">
+	<section id = "mylib">
 		<article>
 			<!--
 				+-------------+-------------+
@@ -56,11 +56,11 @@
 		</article>
 	</section>
 	
-	<section id = "nav">
+	<nav id = "nav">
 		<?php
 			require_once "include/admin_nav.php";
 		?>
-	</section>
+	</nav>
 
 <?php
 	require_once "include/admin_footer.php";

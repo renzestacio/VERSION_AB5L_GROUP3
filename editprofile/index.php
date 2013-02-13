@@ -27,34 +27,58 @@
 		studnum varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci primary key ,
 		username varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
 		password varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		fname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		lname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,		
 		email varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci
+	)";
+	
+	$book_table = "create table book(
+		booknum varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci primary key,
+		author varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		title varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		pub_date varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		status tinyint(1) not null,
+		quantity int(30) not null,
+		image varchar(128)  CHARACTER SET utf8 COLLATE utf8_general_ci,
+		studnum varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci,
+        adminID int(64),
+		foreign key(studnum) references student(studnum),
+		foreign key(adminID) references admin(id)
+	)";
+	
+	$borrow_table = "create table borrow(
+		borrow_date date primary key,
+		due_date date not null
+	)";
+	
+	$reservation_table = "create table reservation(
+		reservation_date date primary key,
+		expiration_date date not null
 	)";
 	
 	$query3 = mysql_query($student_table,$con);
 	$query4 = mysql_query($admin_table,$con);
-	$query5 = mysql_query($requests_table,$con);	
+	$query5 = mysql_query($requests_table,$con);
+	$query6 = mysql_query($book_table,$con) or die(mysql_error());
+	$query7 = mysql_query($borrow_table,$con);
+	$query8 = mysql_query($reservation_table,$con);
 ?>
 	<!--kailangang mag mukhang book shelf itong page na ito-->
-	<div id= "abc">
-	<section id = "left_side">
-		<img src="Athenaeum_Shelf.jpg" id="SHELF" alt="The Athenaeum"/>
-	</section>
-	
 	<section id = "first_row">
-		<article id = "search">
-			<form action = "" method = "post">
-				<input type = "text" name = "search" size="46" />
-				<input type = "submit" value = "Search book"/>
-			</form>
-		</article>
-	</section>
-	
-	<section id = "second_row">
 		<article id = "register">
 			<a href = "register.php"> Sign Up </a>
 		</article>
 		<article id = "login">
 			<a href = "login.php"> Log In </a>
+		</article>
+	</section>
+	
+	<section id = "second_row">
+		<article id = "search">
+			<form action = "" method = "post">
+				<input type = "text" name = "search" />
+				<input type = "submit" value = "Search book"/>
+			</form>
 		</article>
 	</section>
 	
@@ -67,7 +91,6 @@
 		Kayo nang bahala magexplore ^_^
 		</p>
 	</section>
-	</div>
 	
 	
 <?php
