@@ -17,6 +17,8 @@
 			'{$_SESSION['studnum']}',
 			'{$_SESSION['uname']}',
 			'{$pass}',		
+			'{$_SESSION['fname']}',
+			'{$_SESSION['lname']}',
 			'{$_SESSION['email']}'
 		)";
 		$res = mysql_query($new_request, $con);
@@ -41,17 +43,13 @@
 				require_once "include/footer.php";
 			}
 			else{
-				$new_request = "insert into student requests(
+				$new_request = "insert into requests values(
 					'{$_SESSION['studnum']}',
 					'{$_SESSION['uname']}',
 					'{$pass}',
-					NULL,
-					NULL,						
-					'{$_SESSION['email']}',
-					NULL,
-					NULL,
-					NULL,
-					NULL					
+					'{$_SESSION['fname']}',
+					'{$_SESSION['lname']}',						
+					'{$_SESSION['email']}'					
 				)";
 				$res1 = mysql_query($new_request, $con);
 				if (!$res1) {

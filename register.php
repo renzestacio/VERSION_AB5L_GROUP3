@@ -16,7 +16,13 @@
 			<input type = "password" name = "pass1"  pattern = "[A-z0-9]{6,}" required = "required" onchange = "form.pass2.pattern = this.value;"/> <br/><br/>
 			
 			<label for = "pass2">Re-type password: </label><br/>
-			<input type = "password" name = "pass2"  pattern = "[A-z]{6,}" required = "required"/> <br/><br/>
+			<input type = "password" name = "pass2"  pattern = "[A-z0-9]{6,}" required = "required"/> <br/><br/>
+			
+			<label for = "fname">First name: </label><br/>
+			<input type = "text" name = "fname"    required = "required" pattern = "[A-z]{3,}"/> <br/><br/>
+			
+			<label for = "lname">Last name: </label><br/>
+			<input type = "text" name = "lname"    required = "required" pattern = "[A-z]{3,}"/> <br/><br/>
 			
 			<label for = "email">Email: </label><br/>
 			<input type = "email"  name = "email" required = "required" /> <br/><br/>

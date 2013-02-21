@@ -44,7 +44,6 @@ a{
 div#abc{
 	min-height:100%;
 	border:transparent thick solid;
-	background-color:white;
 	margin:auto;
 	min-height: 99%;
 }
@@ -256,7 +255,7 @@ div#content{
 
 section#left_side_edit{
 	color:white;
-	width: 60%;
+	width: 75%;
 	top: 20%;
 	border: 3px solid black;	
 	padding: 15px;
@@ -291,6 +290,7 @@ section#info{
 	height: 40%;
 	text-align:justified;
 	margin-top: 20px;
+	overflow: auto;
 }
 
 section#search_tab{
@@ -310,9 +310,10 @@ section#search_result_tab{
 	padding: 15px;
 	color:white;
 	width:75%;
-	height: auto;
+	height: 30%;
 	text-align:justified;
-	margin-top: 20px;
+	margin-top: 2px;
+	overflow: auto;
 }
 
 section#view_shelf{
@@ -348,3 +349,15 @@ section#left_side_search_user{
 	padding: 15px;
 	background-color: #784421;
 }
+
+section#admin_home_shelf{
+	color:white;
+	width: 75%;
+	height: 100%;
+	top: 39%;
+}
+	img#admin_home_SHELF{
+		bottom: 5px;
+		width: 100%;
+		height: 100%;
+	}

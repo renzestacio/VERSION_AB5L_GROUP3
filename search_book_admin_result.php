@@ -20,13 +20,13 @@
 		}
 		else{
 			if($title_filter != "" && $author_filter == ""){
-				$query = "select * from book where title like '%{$_POST['title']}%' order by booknum";
+				$query = "select * from book where title like '%{$_POST['title']}%'";
 			}
 			else if($title_filter == "" && $author_filter != ""){
-				$query = "select * from book where author like '%{$_POST['author']}%' order by booknum";
+				$query = "select * from book where author like '%{$_POST['author']}%'";
 			}
 			else if($title_filter != "" && $author_filter != ""){
-				$query = "select * from book where title like '%{$_POST['title']}%' and author like '%{$_POST['author']}%' order by booknum";
+				$query = "select * from book where title like '%{$_POST['title']}%' and author like ''%{$_POST['author']}%";
 			}
 		}
 		
@@ -51,29 +51,18 @@
 		echo "<table cellpadding=\"5\" width=\"100%\">
 			<th>Book Number</th>
 			<th>Title</th>
-			<th>Author</th>
-			<th>Quantity</th>";
+			<th>Author</th>";
 			// +----------------+----------------+
 			// |one row of result = one table row|
 			// +----------------+----------------+
-			$current_booknum = "a";
 			while($row = mysql_fetch_assoc($result)){
-				while($current_booknum != $row['booknum']){
-					echo "<tr><td align=\"center\">";
-					echo $row['booknum'];
-					echo "</td><td align=\"center\">";
-					echo $row['title'];
-					echo "</td><td align=\"center\">";
-					echo $row['author'];
-					echo "</td><td align=\"center\">";
-					echo $row['quantity'];
-					echo "</td>";
-					echo "<td align=\"center\"><a href = \"process_borrow.php?booknum={$row['booknum']}\">Borrow</a></td>";
-					echo "</tr>";
-					
-					$current_booknum = $row['booknum'];
-					break;
-				}
+				echo "<tr><td align=\"center\">";
+				echo $row['booknum'];
+				echo "</td><td align=\"center\">";
+				echo $row['title'];
+				echo "</td><td align=\"center\">";
+				echo $row['author'];
+				echo "</td><tr>";
 			}
 		echo "</table>";
 		echo "</div>";
@@ -82,7 +71,7 @@
 		// +---------------+----------------+
 		echo "</section>";
 		echo "<section id = \"nav\">";
-			require_once "include/nav.php";
+			require_once "include/admin_nav.php";
 		echo "</section></br></br></br></br></br></br></br>";
 		require_once "include/footer.php";
 		

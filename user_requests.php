@@ -49,7 +49,7 @@
 	echo "</section>";
 	echo "<section id = \"nav\">";
 		require_once "include/admin_nav.php";
-	echo "</section>";
+	echo "</section></br></br></br></br></br></br></br></br></br></br>";
 	require_once "include/admin_footer.php";
 	
 	require_once "connection/close.php";

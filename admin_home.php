@@ -15,8 +15,8 @@
 		</article>
 	</section><br/>
 	
-	<section id = "">
-		
+	<section id = "admin_home_shelf">
+		<img src="Athenaeum_Shelf.jpg" id="admin_home_SHELF" alt="The Athenaeum"/>
 	</section>
 	
 	<section id = "nav">

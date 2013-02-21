@@ -25,7 +25,7 @@
 				+-------------+-------------+
 			-->
 			Search user according to: </br>
-			<form action="search_book_student_result.php" method="post">
+			<form action="search_book_admin_result.php" method="post">
 				
 				<!--
 				******this is for sorting... (not yet implemented)******
@@ -55,7 +55,7 @@
 	
 	<section id = "nav">
 		<?php
-			require_once "include/nav.php";
+			require_once "include/admin_nav.php";
 		?>
 	</section>
 	<br/><br/>

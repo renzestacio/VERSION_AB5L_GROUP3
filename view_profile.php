@@ -104,6 +104,6 @@
 		require_once "include/nav.php";
 	echo "</section>";
 	
-	require_once "include/footer.php";
+	require_once "include/user_footer.php";
 	require_once "connection/close.php";
 ?>
