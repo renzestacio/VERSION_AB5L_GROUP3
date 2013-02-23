@@ -14,6 +14,7 @@
 	while($row = mysql_fetch_assoc($result)){
 		if($uname===$row['username'] && $pass===$row['password']){
 			$_POST['uname'] = htmlentities($uname);
+			$_SESSION['studnum'] = $row['studnum'];
 			$_SESSION['fname'] = $row['fname'];
 			$_SESSION['lname'] = $row['lname'];
 			$_SESSION['email'] = $row['email'];
@@ -21,6 +22,7 @@
 			$_SESSION['degree'] = $row['degree'];
 			$_SESSION['imagename'] = $row['imagename'];
 			$_SESSION['imagefile'] = $row['imagefile'];
+			$_SESSION['canborrow'] = $row['canborrow'];
 			header("Location: home.php");
 			exit;
 		}

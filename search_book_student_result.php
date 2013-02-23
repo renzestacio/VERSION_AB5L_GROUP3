@@ -39,7 +39,11 @@
 		
 		echo "<section id = \"greetings\">";
 		echo "<article>";
+<<<<<<< HEAD
 				echo "Welcome, <em><a href = \"admin_home.php\" id = \"uname\">{$_SESSION['uname']}</a></em> ! 	| 	<a href = \"signout.php\">Sign Out</a>";
+=======
+				echo "Welcome, <em><a href = \"home.php\" id = \"uname\">{$_SESSION['uname']}</a></em> ! 	| 	<a href = \"signout.php\">Sign Out</a>";
+>>>>>>> 2/23/2013 CHANGES
 		echo "</article>";
 		echo "</section><br/>";
 		
@@ -52,7 +56,11 @@
 			<th>Book Number</th>
 			<th>Title</th>
 			<th>Author</th>
+<<<<<<< HEAD
 			<th>Quantity</th>";
+=======
+			<th>Available</th>";
+>>>>>>> 2/23/2013 CHANGES
 			// +----------------+----------------+
 			// |one row of result = one table row|
 			// +----------------+----------------+
@@ -62,6 +70,7 @@
 					echo "<tr><td align=\"center\">";
 					echo $row['booknum'];
 					echo "</td><td align=\"center\">";
+<<<<<<< HEAD
 					echo $row['title'];
 					echo "</td><td align=\"center\">";
 					echo $row['author'];
@@ -69,6 +78,25 @@
 					echo $row['quantity'];
 					echo "</td>";
 					echo "<td align=\"center\"><a href = \"process_borrow.php?booknum={$row['booknum']}\">Borrow</a></td>";
+=======
+					echo "<a href=\"view_book_student.php?id=" . $row['booknum'] . "\">{$row['title']}</a>";
+					echo "</td><td align=\"center\">";
+					echo $row['author'];
+					echo "</td><td align=\"center\">";
+					$compute = "select * from book where booknum='$row[booknum]' and studnum IS NULL";
+					$tempres = mysql_query($compute, $con);
+					$avail = 0;
+					while($temp = mysql_fetch_assoc($tempres)){
+						$avail+=1;
+					}
+					echo $avail;
+					echo "</td>";
+					
+					if($_SESSION['canborrow'] == 1)
+						echo "<td align=\"center\"><a href = \"process_borrow.php?booknum={$row['booknum']}\">Borrow</a></td>";
+					else
+						echo "<td align=\"center\">Repent</td>";
+>>>>>>> 2/23/2013 CHANGES
 					echo "</tr>";
 					
 					$current_booknum = $row['booknum'];

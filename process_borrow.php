@@ -36,11 +36,19 @@
 		if($bookrow['status']==1){
 			$update = "UPDATE `book` SET `status`=0, `studnum`= '$studnum' WHERE `BookID`='$bookrow[BookID]'";
 			mysql_query($update, $con) or die(mysql_error());
+<<<<<<< HEAD
 			decQuantity($bookrow['quantity'], $_GET['booknum'], $con);
 			break;
 		}
 	}
 	
+=======
+			//decQuantity($bookrow['quantity'], $_GET['booknum'], $con);
+			break;
+		}
+	}
+	/*
+>>>>>>> 2/23/2013 CHANGES
 	function decQuantity($quantity, $booknum, $con){
 		$book = "select * from book where booknum = '$booknum'";
 		$book_result = mysql_query($book,$con);
@@ -51,7 +59,11 @@
 			mysql_query($updater, $con) or die(mysql_error());
 		}
 	}
+<<<<<<< HEAD
 	
+=======
+	*/
+>>>>>>> 2/23/2013 CHANGES
 	header("Location: home.php");
 	require_once "connection/close.php";
 ?>

@@ -2,9 +2,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<<<<<<< HEAD
 <head>
 	<script type="text/javascript" src="js/alert.js"></script>
 </head>
+=======
+>>>>>>> 2/23/2013 CHANGES
 <?php
 	session_start();
 	include 'connection/connect.php';

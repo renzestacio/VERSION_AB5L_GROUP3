@@ -3,8 +3,7 @@
 	require_once "connection/connect.php";
 	require_once "connection/create_db.php";
 	require_once "connection/use_db.php";
-	
-	$student_table = "create table student(
+		$student_table = "create table student(
 		studnum varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci primary key,
 		username varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
 		password varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
@@ -14,7 +13,8 @@
 		college varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
 		degree varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
 		imagename varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
-		imagefile blob
+		imagefile blob,
+		canborrow TINYINT( 1 ) NOT NULL DEFAULT  '1'
 	)";
 	
 	$admin_table = "create table admin(
@@ -27,12 +27,43 @@
 		studnum varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci primary key ,
 		username varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
 		password varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		fname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		lname varchar(128) CHARACTER SET utf8 COLLATE utf8_general_ci not null,		
 		email varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci
 	)";
 	
+	$book_table = "create table book(
+		BookID int(64) primary key auto_increment,
+		booknum varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		author varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		title varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		pub_date varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci not null,
+		status tinyint(1) not null,
+		imagename varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci,
+		imagefile blob,
+		studnum varchar(64)  CHARACTER SET utf8 COLLATE utf8_general_ci,
+        adminID int(64),
+		foreign key(studnum) references student(studnum),
+		foreign key(adminID) references admin(id)
+	)";
+	
+	$borrow_table = "create table borrow(
+		borrow_date date primary key,
+		due_date date not null
+	)";
+	
+	$reservation_table = "create table reservation(
+		reservation_date date primary key,
+		expiration_date date not null
+	)";
+	
+	
 	$query3 = mysql_query($student_table,$con);
 	$query4 = mysql_query($admin_table,$con);
-	$query5 = mysql_query($requests_table,$con);	
+	$query5 = mysql_query($requests_table,$con);
+	$query6 = mysql_query($book_table,$con);
+	$query7 = mysql_query($borrow_table,$con);
+	$query8 = mysql_query($reservation_table,$con);
 ?>
 	<!--kailangang mag mukhang book shelf itong page na ito-->
 	<div id= "abc">

@@ -6,11 +6,23 @@
 	}
 	require_once "connection/connect.php";
 	require_once "connection/use_db.php";
-	
-	$query = "select * from student where username = '{$_SESSION['uname']}'";
-	$bookquery = "select * from book where studnum = '{$_SESSION['studnum']}'";
+	$id = mysql_escape_string($_REQUEST['id']);
+	$query = "select * from student where studnum = '$id'";
+	$bookquery = "select * from book where studnum = '$id'";
 	$result = mysql_query($query, $con);
 	$bookresult = mysql_query($bookquery, $con);
+
+	while($row = mysql_fetch_assoc($result)){
+		$uname = $row['username'];
+		$fname = $row['fname'];
+		$lname = $row['lname'];
+		$email = $row['email'];
+		$hasImage = $row['imagefile'];
+		$degree = $row['degree'];
+		$college = $row['college'];
+		break;
+	}
+	
 	// +---------------+----------------+
 	// | 			UI Part...			|
 	// +---------------+----------------+
@@ -27,8 +39,8 @@
 			echo "<tr><td align=\"center\">";
 			echo "<b>Avatar Image </b>";
 			echo "</td><td>";
-			if(isset($_SESSION['imagefile']))
-				echo "<img src=get.php?id=". $_SESSION['uname'] .">";
+			if(isset($hasImage))
+				echo "<img src=get.php?id=". $uname .">";
 			else
 				echo "No Avatar Image";
 			echo "</td></tr>";
@@ -38,56 +50,51 @@
 	// | Table-ized user's basic info	|
 	// +---------------+----------------+
 	echo "<section id=\"info\">";
-	echo "<table cellpadding=\"10\">";
-	while($row = mysql_fetch_assoc($result)){		
+	echo "<table cellpadding=\"10\">";	
 		echo "<tr><td align=\"center\">";
 		echo "<b>Student Number  </b>";
 		echo "</td><td>";
-		echo $row['studnum'];
+		echo $id;
 		echo "</td></tr>";
 		
 		echo "<tr><td align=\"center\">";
 		echo "<b>Username  </b>";
 		echo "</td><td>";
-		echo $row['username'];
+		echo $uname;
 		echo "</td></tr>";
 		
 		echo "<tr><td align=\"center\">";
 		echo "<b>Email Address  </b>";
 		echo "</td><td>";
-		echo $row['email'];
+		echo $email;
 		echo "</td></tr>";
 		
 		echo "<tr><td align=\"center\">";
 		echo "<b>First Name  </b>";
 		echo "</td><td>";
-		echo $row['fname'];
+		echo $fname;
 		echo "</td></tr>";
 		
 		echo "<tr><td align=\"center\">";
 		echo "<b>Last Name  </b>";
 		echo "</td><td>";
-		echo $row['lname'];
+		echo $lname;
 		echo "</td></tr>";
 
 		echo "<tr><td align=\"center\">";
 		echo "<b>College  </b>";
 		echo "</td><td>";
-		echo $row['college'];
+		echo $college;
 		echo "</td></tr>";		
 
 		echo "<tr><td align=\"center\">";
 		echo "<b>Degree  </b>";
 		echo "</td><td>";
-		echo $row['degree'];
+		echo $degree;
 		echo "</td></tr>";
 		
 		echo "</section>";
 		
-	}
-<<<<<<< HEAD
-	
-=======
 	echo "<tr><td align=\"center\">";
 	echo "<b>Books Borrowed</b>";
 	echo "</td><td>";
@@ -96,10 +103,9 @@
 		echo "<tr><td align=\"center\">";
 		echo "<b>Title  </b>";
 		echo "</td><td>";
-		echo "<a href=\"view_book_student.php?id=" . $row['booknum'] . "\">{$row['title']}</a>";
+		echo $row['title'];
 		echo "</td></tr>";		
 	}	
->>>>>>> 2/23/2013 CHANGES
 	echo "</table>";
 	// +---------------+----------------+
 	// |		End of Table :)			|
@@ -116,7 +122,7 @@
 	echo "</section>";
 	
 	echo "<section id = \"nav\">";
-		require_once "include/nav.php";
+		require_once "include/admin_nav.php";
 	echo "</section>";
 	
 	require_once "include/user_footer.php";

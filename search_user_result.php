@@ -8,7 +8,7 @@
 	require_once "include/admin_header.php";
 	require_once "connection/connect.php";
 	require_once "connection/use_db.php";
-	
+	include 'edit_user.php';
 	$studnum_filter = $_POST['studnum'];
 	$fname_filter = $_POST['fname'];
 	$lname_filter = $_POST['lname'];
@@ -88,13 +88,14 @@
 			<th>Username</th>
 			<th>Email</th>
 			<th>First Name</th>
-			<th>Last Name</th>";
+			<th>Last Name</th>
+			<th>Action</th>";
 			// +----------------+----------------+
 			// |one row of result = one table row|
 			// +----------------+----------------+
 			while($row = mysql_fetch_assoc($result)){
 				echo "<tr><td align=\"center\">";
-				echo $row['studnum'];
+				echo "<a href = \"view_search_profile.php?id={$row['studnum']}\">{$row['studnum']}</a>";
 				echo "</td><td align=\"center\">";
 				echo $row['username'];
 				echo "</td><td align=\"center\">";
@@ -103,7 +104,14 @@
 				echo $row['fname'];
 				echo "</td><td align=\"center\">";
 				echo $row['lname'];
-				echo "</td><tr>";
+				echo "</td>";
+				
+				echo "<form action=\"edit_user.php?id={$row['studnum']}\" method=\"post\">";		
+				if($row['canborrow'] == 1)
+					echo "<td align=\"center\"><input type=\"submit\" name=\"punish\" value=\"Punish\"></td>";
+				else
+					echo "<td align=\"center\"><input type=\"submit\" name=\"unpunish\" value=\"UnPunish\"></td>";
+				echo "</form>";
 			}
 		echo "</table>";
 		echo "</div>";

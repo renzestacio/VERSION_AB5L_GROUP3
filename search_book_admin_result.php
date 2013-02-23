@@ -51,6 +51,7 @@
 		echo "<table cellpadding=\"5\" width=\"100%\">
 			<th>Book Number</th>
 			<th>Title</th>
+<<<<<<< HEAD
 			<th>Author</th>";
 			// +----------------+----------------+
 			// |one row of result = one table row|
@@ -63,6 +64,51 @@
 				echo "</td><td align=\"center\">";
 				echo $row['author'];
 				echo "</td><tr>";
+=======
+			<th>Author</th>
+			<th>Quantity</th>
+			<th>Available</th>";
+			// +----------------+----------------+
+			// |one row of result = one table row|
+			// +----------------+----------------+
+			$current_booknum = "a";
+			while($row = mysql_fetch_assoc($result)){
+				while($current_booknum != $row['booknum']){
+					echo "<tr><td align=\"center\">";
+					echo $row['booknum'];
+					echo "</td><td align=\"center\">";
+					echo "<a href=\"view_book_admin.php?id=" . $row['booknum'] . "\">{$row['title']}</a>";
+					echo "</td><td align=\"center\">";
+					echo $row['author'];
+					echo "</td><td align=\"center\">";
+					
+					$compute = "select * from book where booknum='$row[booknum]'";
+					$tempres = mysql_query($compute, $con);
+					$quantity = 0;
+					while($temp = mysql_fetch_assoc($tempres)){
+						$quantity+=1;
+					}
+					echo $quantity;
+
+					echo "</td>";
+					echo "</td><td align=\"center\">";
+					
+					$compute = "select * from book where booknum='$row[booknum]' and studnum IS NULL";
+					$tempres = mysql_query($compute, $con);
+					$avail = 0;
+					while($temp = mysql_fetch_assoc($tempres)){
+						$avail+=1;
+					}
+					echo $avail;
+					
+					echo "</td>";
+					echo "<td align=\"center\"><a href = \"edit_book.php?id={$row['title']}\">Edit</a></td>";				
+					echo "</td></tr>";
+					
+					$current_booknum = $row['booknum'];
+					break;					
+				}
+>>>>>>> 2/23/2013 CHANGES
 			}
 		echo "</table>";
 		echo "</div>";
@@ -73,6 +119,10 @@
 		echo "<section id = \"nav\">";
 			require_once "include/admin_nav.php";
 		echo "</section></br></br></br></br></br></br></br>";
+<<<<<<< HEAD
 		require_once "include/footer.php";
+=======
+		require_once "include/user_footer.php";
+>>>>>>> 2/23/2013 CHANGES
 		
 ?>
