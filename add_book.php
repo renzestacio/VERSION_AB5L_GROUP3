@@ -30,12 +30,6 @@
 				<label for = "pub_date">Publication date:</label>
 				<input type = "date" name = "pub_date" required = "required"/><br/><br/>
 				
-				<label for = "status">Status of the book:</label>
-				<select name = "status">
-					<option value="1" selected>Available</option>
-					<option value="0">Not Available</option>
-				</select><br/><br/>
-				
 				<label for = "quantity">Quantity:</label>
 				<input type = "number" name = "quantity" max = '20' /><br/><br/>
 			
