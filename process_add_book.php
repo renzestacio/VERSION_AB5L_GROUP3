@@ -3,8 +3,8 @@
 	require_once "connection/use_db.php";
 	
 	$_SESSION = $_POST;
-	var_dump($_SESSION);
-	var_dump($_FILES);
+	//var_dump($_SESSION);
+	//var_dump($_FILES);
 	$status = (int)$_SESSION['status'];
 	$quantity = (int)$_SESSION['quantity'];
 <<<<<<< HEAD
