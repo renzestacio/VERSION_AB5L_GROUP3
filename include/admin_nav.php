@@ -1,4 +1,3 @@
-
 		<?php
 			require_once "connection/connect.php";
 			require_once "connection/use_db.php";
@@ -16,7 +15,7 @@
 			<div class = "content">
 				<p><a href = "add_book.php" class = "links">Add</a></p>
 				<p><a href = "search_book_admin.php" class = "links">Search</a></p>
-				<p><a href = "#" class = "links">Remove</a></p>
+				<p><a href = "search_book_admin.php" class = "links">Remove</a></p>
 			</div>
 				
 		</div>
