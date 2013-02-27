@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	if(isset($_SESSION['uname'])){
+		header("Location: home.php");
+	}
 	require_once "include/header.php";
 ?>
 
