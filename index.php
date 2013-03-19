@@ -1,66 +1,114 @@
 <?php
+	/*
+		a currently logged-in user should not be redirected to this page
+		he/she must be redirected to home.php when accessing this page
+	*/
+	session_start();
+	
+	if(isset($_SESSION['uname'])){
+		require_once "connection/connect.php";
+		require_once "connection/use_db.php";
+		$uname = mysql_real_escape_string($_SESSION['uname']);	/*cleans the string for query*/
+		
+		$query = "select username from student where username like '{$uname}' ";	
+		$result = mysql_query($query, $con);
+		
+		if(mysql_num_rows($result) != 0){
+			header("Location: home.php");
+		}
+	}
+	//var_dump($_SESSION);
 	require_once "include/header.php";
+	
 	require_once "connection/connect.php";
 	require_once "connection/create_db.php";
 	require_once "connection/use_db.php";
-	
-	$student_table = "create table student(
-		studnum varchar(64) primary key,
-		username varchar(128) not null,
-		password varchar(128) not null,
-		fname varchar(128)not null,
-		lname varchar(128)not null,
-		email varchar(64)
-	)";
-	
-	$admin_table = "create table admin(
-		id int(64) primary key auto_increment,
-		username varchar(128) not null,
-		password varchar(128) not null
-	)";
-	
-	$requests_table = "create table requests(
-		studnum varchar(64) primary key,
-		username varchar(128) not null,
-		password varchar(128) not null,
-		fname varchar(128),
-		lname varchar(128),
-		email varchar(64)
-	)";
-	
-	$query3 = mysql_query($student_table,$con);
-	$query4 = mysql_query($admin_table,$con);
-	$query5 = mysql_query($requests_table,$con);
+	require_once "connection/create_tables.php";
 	
 ?>
-	<!--kailangang mag mukhang book shelf itong page na ito-->
-	<section id = "first_row">
-		<article id = "register">
-			<a href = "register.php"> Sign Up </a>
-		</article>
-		<article id = "login">
-			<a href = "login.php"> Log In </a>
-		</article>
-	</section>
 	
-	<section id = "second_row">
-		<article id = "search">
-			<form action = "" method = "post">
-				<input type = "text" name = "search" />
-				<input type = "submit" value = "Search book"/>
-			</form>
-		</article>
-	</section>
+	<h2 class="welcome" > Welcome! </h2>
 	
-	<section id = "third_row">
-		Anong magandang ilagay dito?<hr/>
-		<p>Initial CSS pa lang to. Saka basic layout din. Gumagana na yung Sign Up, Log in at Sign out for both admin and student.
-		Hindi pa nga lang ganun kaayos yung sign up dahil diba kailangang may request munang matatanggap ang admin bago pa 
-		lang maapprove yung guest. <hr/> Ipopulate niyo muna nga pala yung tables. Ang meron pa lang ay yung sa user at student.
-		<hr/><strong> Tignan niyo na lang yung phpMyAdmin() sa wamp. May library na database dyan sa left side. Yan yung pinagalan ko dun para sa sample database.</strong>
-		Kayo nang bahala magexplore ^_^
-		</p>
-	</section>
+	<div id="site_content">
+		<!-- left side of the site_content div -->
+		<div id="index_left_container">
+			<?php
+				require_once "include/search_book_guest.php";
+			?>
+		</div>
+		
+	<div class="container">
+		<div id="content-slider">
+			<div id="slider">
+					<div id="mask">
+						<ul>
+							<li id="first" class="firstanimation">
+								<a href="#">
+							<img src="images/dyk/dyk1.jpg" alt="Shakespeare"/>
+							</a>
+								<div class="tooltip">
+							<h1>Shakespeare "worded" it!</h1>
+							</div>
+						</li>
+
+						<li id="second" class="secondanimation">
+							<a href="#">
+								<img src="images/dyk/dyk2.jpg" alt="Lions"/>
+							</a>
+							<div class="tooltip">
+								<h1>Longest Novel</h1>
+							</div>
+						</li>
+						
+						<li id="third" class="thirdanimation">
+							<a href="#">
+								<img src="images/dyk/dyk3.jpg" alt="Snowalker"/>
+							</a>
+							<div class="tooltip">
+								<h1>Bob Ong is 2nd place!</h1>
+							</div>
+						</li>
+									
+						<li id="fourth" class="fourthanimation">
+							<a href="#">
+								<img src="images/dyk/dyk4.jpg" alt="Howling"/>
+							</a>
+							<div class="tooltip">
+								<h1>Seven times is enough!</h1>
+							</div>
+						</li>
+										
+							<li id="fifth" class="fifthanimation">
+								<a href="#">
+									<img src="images/dyk/dyk5.jpg" alt="Sunbathing"/>
+								</a>
+								<div class="tooltip">
+									<h1>The Task is Expensive!</h1>
+								</div>
+							</li>
+						</ul>
+					</div>
+				<div class="progress-bar"></div>
+			</div>
+		</div>
+	</div>
+		
+		<!-- right side of the site_content div -->
+		<div id="index_right_login">
+			<!-- Log In -->
+			<?php
+				require_once "login.php";
+			?>
+		</div>
+		
+		<div id="index_right_signup">
+			<!-- Log In -->
+			<?php
+				require_once "signup.php";
+			?>
+		</div>
+		
+	</div>
 	
 	
 <?php

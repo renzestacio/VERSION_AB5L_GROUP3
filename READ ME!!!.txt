@@ -1,0 +1,39 @@
+SAME LAYOUT LANG PARA SA ADMIN AT USER. 
+NAGKAIBA LANG AY YUNG NAVIGATION NA MAKIKITA SA ITAAS.
+KOPYAHIN NA LANG ANG LAYOUT AT IBAHIN NA LANG ANG LAMAN NG <div> TAG
+KUNG KINAKAILANGAN. 
+
+
+>> FOR ANY CHANGES MADE IN ANY PHP/CSS FILE/S, WRITE IT HERE.
+
+FORMAT:
+	NAME:
+	DATE EDITED:
+	FILENAME:
+	CHANGES:
+	
+/*------------------------------------------------------------------------------*/
+NAME: Renz
+DATE EDITED: Mar. 12, 2013 (T)
+FILENAME: TOO MANY TO MENTION -> ALL FILES NA MAY MODIFIED DATE NA MAR. 12
+CHANGES:
+1. Inayos ko yung mga tables. Kung makikita niyo ay may mga bagong tags namely, <thead>, <tbiody> at
+<tfoot>.
+2. Yung input para sa mga forms ay nakaenclose na sa <fieldset> tag.
+3. Filenames ng mga ibang files at names ng mga ids at classes.
+4. Hiniwalay ko yung Sooperfish na css into another css file.
+5. Inayos ko yung session para sa login.
+
+/*------------------------------------------------------------------------------*/
+
+NAME: Renz
+DATE EDITED: Mar. 13, 2013 (W)
+FILENAME: TOO MANY TO MENTION -> ALL FILES NA MAY MODIFIED DATE NA MAR. 13
+CHANGES:
+1. Inayos ko yung mga tables. Kung makikita niyo ay may mga bagong tags namely, <thead>, <tbiody> at
+<tfoot>.
+2. May mga binago akong layout para sa user requests at view profile.
+3. Filenames ng mga ibang files at names ng mga ids at classes.
+4. Hiniwalay ko yung basic na css into another css file.
+5. Inayos ko yung session para sa admin.
+

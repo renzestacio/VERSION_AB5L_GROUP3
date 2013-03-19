@@ -1,119 +1,173 @@
-<?php
 
+<?php
 	session_start();
-	//hanggang hindi nakaset yung username hindi makakapasok yung gustong makaaccess dito
-	if(!isset($_SESSION['uname'])){
-		header("Location: admin_login.php");
-	}
+	/*
+		admins can only access the system when successfully logged in
+	*/
+	require_once "include/checkSession.php";
 	require_once "include/admin_header.php";
+	require_once "include/admin_nav.php";
+	
 	require_once "connection/connect.php";
 	require_once "connection/use_db.php";
+	require_once "punish.php";
+
+	if(!isset($_GET['success'])){
+		$success = -1;
+	}
+	else if($_GET['success'] == 1){
+		$success = 1;
+	}
+	else if($_GET['success'] == 2){
+		$success = 2;
+	}
+	else{
+		$success = 0;
+	}
 	
-	$studnum_filter = $_POST['studnum'];
-	$fname_filter = $_POST['fname'];
-	$lname_filter = $_POST['lname'];
+	if(isset($_POST['studnum'])) $studnum_filter = mysql_real_escape_string($_POST['studnum']);
+	else $studnum_filter = "";
+	if(isset($_POST['fname'])) $fname_filter = mysql_real_escape_string($_POST['fname']);
+	else $fname_filter = "";
+	if(isset($_POST['lname'])) $lname_filter = mysql_real_escape_string($_POST['lname']);
+	else $lname_filter = "";
 	
-	//*******************************
-	//		searches all user
-	//*******************************
-		
+		/*
+		if filters are blank, all users should be shown
+	*/
 		if($studnum_filter == "" && $fname_filter == "" && $lname_filter == ""){
 			$query = "select * from student order by lname";
 		}
 		else{
-			//*******************
-			//by student number only
-			//*******************
+			/*
+				filter by student number only
+			*/
 			if($studnum_filter != "" && $fname_filter == "" && $lname_filter == ""){
-				$query = "select * from student where studnum like '%{$_POST['studnum']}%'";
+				$query = "select * from student where studnum like '%$studnum_filter%'";
 			}
-			//*******************
-			//by first name only
-			//*******************
+			/*
+				filter by first name only
+			*/
 			else if($studnum_filter == "" && $fname_filter != "" && $lname_filter == ""){
-				$query = "select * from student where fname like '%{$_POST['fname']}%'";
+				$query = "select * from student where fname like '%$fname_filter%'";
 			}
-			//*******************
-			//by last name only
-			//*******************
+			/*
+				filter by last name only
+			*/
 			else if($studnum_filter == "" && $fname_filter == "" && $lname_filter != ""){
-				$query = "select * from student where lname like '%{$_POST['lname']}%'";
+				$query = "select * from student where lname like '%$lname_filter%'";
 			}
-			//*******************
-			//by student number and first name
-			//*******************
+			/*
+				filter by student number and first name
+			*/
 			else if($studnum_filter != "" && $fname_filter != "" && $lname_filter == ""){
-				$query = "select * from student where studnum like '%{$_POST['studnum']}%' and fname like '%{$_POST['fname']}%'";
+				$query = "select * from student where studnum like '%$studnum_filter%' and fname like '%$fname_filter%'";
 			}
-			//*******************
-			//by student number and last name
-			//*******************
+			/*
+				filter by student number and last name
+			*/
 			else if($studnum_filter != "" && $fname_filter == "" && $lname_filter != ""){
-				$query = "select * from student where studnum like '%{$_POST['studnum']}%' and lname like '%{$_POST['lname']}%'";
+				$query = "select * from student where studnum like '%$studnum_filter%' and lname like '%$lname_filter%'";
 			}
-			//*******************
-			//by first name and last name
-			//*******************
+			/*
+				filter by first name and last name
+			*/
 			else if($studnum_filter == "" && $fname_filter != "" && $lname_filter != ""){
-				$query = "select * from student where fname like '%{$_POST['fname']}%' and lname like '%{$_POST['lname']}%'";
+				$query = "select * from student where fname like '%$fname_filter%' and lname like '%$lname_filter%'";
 			}
-			//*******************
-			//by student number, first name and last name
-			//*******************
+			/*
+				filter by student number, first name and last name
+			*/
 			else if($studnum_filter != "" && $fname_filter != "" && $lname_filter != ""){
-				$query = "select * from student where studnum like '%{$_POST['studnum']}%' and fname like '%{$_POST['fname']}%' and lname like '%{$_POST['lname']}%'";
+				$query = "select * from student where studnum like '%$studnum_filter%' and fname like '%$fname_filter%' and lname like '%$lname_filter%'";
 			}
 		}
-		
-		$result = mysql_query($query,$con);
+?>
 
-		// +---------------+----------------+
-		// | 			UI Part...			|
-		// +---------------+----------------+
-		require_once "include/admin_header.php";
+	<div id = "site_content">
+		<div id="prompt_punish_unpunish">
+		<aside>
+		<?php
+			if($success == 1) echo "Student has been punished";
+			else if($success == 2) echo "Student has been unpunished";
+		?>
+		</aside>
+		</div>
+		<div id = "search_user_container">
+			<form class = "form_settings" action="search_user_result.php" method="post">
+				
+				<table cellspacing= "15px">
+				<tr>
+					<td><label for = "studnum">Student Number: </label></td>
+					<td><input type="text" name="studnum" pattern="[0-9]{0,4}-{0,1}[0-9]{0,5}" /></td>
+				</tr>
+				<tr>
+					<td><label for = "fname">First Name: </label></td>
+					<td><input type="text" name="fname" pattern="[A-z0-9 ]{0,}" /></td>
+				</tr>
+				
+				<tr>
+					<td><label for = "studnum">Last Name: </label></td>
+					<td><input type="text" name="lname" pattern="[A-z0-9 ]{0,}" /></td>
+				</tr>
+				
+				<tr>
+					<td></td>
+					<td><input class = "submit" type="submit" value="Search"></td>
+				</tr>
+				</table>
+			</form>
+		</div>
 		
-		echo "<section id = \"greetings\">";
-		echo "<article>";
-				echo "Welcome, <em><a href = \"admin_home.php\" id = \"uname\">{$_SESSION['uname']}</a></em> ! 	| 	<a href = \"signout.php\">Sign Out</a>";
-		echo "</article>";
-		echo "</section><br/>";
-		
-		echo "<section id=\"mylib\">";
-		// +---------------+----------------+
-		// | Table-ized the result of query	|
-		// +---------------+----------------+
-		echo "<div id=\"tableResult\">";
-		echo "<table cellpadding=\"5\" width=\"100%\">
-			<th>Student Number</th>
-			<th>Username</th>
-			<th>Email</th>
-			<th>First Name</th>
-			<th>Last Name</th>";
-			// +----------------+----------------+
-			// |one row of result = one table row|
-			// +----------------+----------------+
-			while($row = mysql_fetch_assoc($result)){
-				echo "<tr><td align=\"center\">";
-				echo $row['studnum'];
-				echo "</td><td align=\"center\">";
-				echo $row['username'];
-				echo "</td><td align=\"center\">";
-				echo $row['email'];
-				echo "</td><td align=\"center\">";
-				echo $row['fname'];
-				echo "</td><td align=\"center\">";
-				echo $row['lname'];
-				echo "</td><tr>";
-			}
-		echo "</table>";
-		echo "</div>";
-		// +---------------+----------------+
-		// |		End of Table :)			|
-		// +---------------+----------------+
-		echo "</section>";
-		echo "<section id = \"nav\">";
-			require_once "include/admin_nav.php";
-		echo "</section>";
-		require_once "include/admin_footer.php";
-		
+		<div id = "search_user_result_container">
+			<table cellpadding = "5px">
+				<thead>
+					<tr>
+						<th>Student Number</th>
+						<th>Username</th>
+						<th>Email</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+						$result = mysql_query($query,$con);
+						while($row = mysql_fetch_assoc($result)){
+							echo "<tr>";
+								
+								/*
+									Student number is a link to view_search_profile.php page
+								*/
+								echo "<td><a href = \"view_search_profile.php?id={$row['studnum']}\">{$row['studnum']}</a></td>";
+								echo "<td>{$row['username']}</td>";
+								echo "<td>{$row['email']}</td>";
+								echo "<td>{$row['fname']}</td>";
+								echo "<td>{$row['lname']}</td>";
+								/*
+									The following are actions that can be performed by the admin to a certain student.
+									option "punish" changes the student's status to 0 wherein he/she can no longer borrow a book
+									option "unpunish" changes the student's status to 1 wherein he/she is allowed to borrow a book
+								*/
+								echo "<form class = \"form_settings\" action=\"punish.php?id={$row['studnum']}\" method=\"post\">";
+									if($row['canborrow'] == 1){
+										echo "<td><input class = \"submit\" type=\"submit\" name=\"punish\" value=\"Punish\"></td>";
+										
+									}else{
+										echo "<td><input class = \"submit\" type=\"submit\" name=\"unpunish\" value=\"Unpunish\"></td>";
+									}
+								echo "</form>";
+							echo "</tr>";	
+						}
+					?>
+				</tbody>				
+			</table>
+		</div>
+	</div>
+	
+	
+<?php
+	require_once "include/footer.php";
+	require_once "connection/close.php";
 ?>

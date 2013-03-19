@@ -1,0 +1,433 @@
+
+/*-----------------------view_profile.php---------------------------*/
+
+
+#student_info{
+	border: 2px solid sienna;
+	height: 230px;
+	width: 630px;
+	position: absolute;
+	bottom: 40px;
+	left: 430px;
+	text-align: center;
+	font: 120% Century Gothic;
+	color: Turquoise ;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;	
+}
+
+
+#avatar img, #avatar p{
+	border: 2px groove sienna;
+	width: 180px;
+	height: 240px;
+	position: relative;
+	left: 45px;
+	text-align: center;
+	font: 120% Century Gothic;
+	color: LightGreen;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+}
+
+/*===========================*/
+
+#student_books{
+	width: 910px;
+	height: 230px;
+	position: relative;
+	left: 45px;
+	bottom: -30px;
+	text-align: center;
+	font: 120% Century Gothic;
+	color: chocolate;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	
+}
+
+#student_books ul li a{
+	border-bottom: 2px solid BurlyWood ;
+	border-top: 2px solid BurlyWood ;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: orange;
+	font: 102% 'whack';
+}
+
+#student_books table th{
+  	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	color: khaki ;
+	font: 16px 'Whack';
+	padding: 1.5px 15px;
+	margin: 5px;
+	background: -moz-linear-gradient(#4e3f30, #675B42);
+	background: -o-linear-gradient(#4e3f30, #675B42);
+	background: -webkit-linear-gradient(#4e3f30, #675B42);
+}
+
+#reserved, #borrowed{
+	height: 130px;
+	width: 850px;
+	border: 2px solid BurlyWood ;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	overflow: auto;
+}
+/********************************************************************************************/
+#admin_books{
+	width: 910px;
+	height: 230px;
+	position: absolute;
+	left: 445px;
+	bottom: 30px;
+	text-align: center;
+	font: 120% Century Gothic;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+}
+
+#admin_books ul li a{
+	border-bottom: 2px solid BurlyWood ;
+	border-top: 2px solid BurlyWood ;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: MediumSeaGreen  ;
+	font: 102% 'whack';
+}
+
+#admin_books ul li a span:hover{
+	cursor: pointer;
+	color: wheat   ;
+}
+
+#binfo, #blist{
+	height: auto;
+	width: 630px;
+	border: 2px solid BurlyWood ;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	overflow: auto;
+	position: absolute;
+	color: white;
+}
+
+#binfo strong{
+	color: orange;
+	font: 102% 'whack';
+}
+
+#binfo a{
+	font: 18px 'whack';
+	color: khaki;
+	letter-spacing: 2px;
+	text-decoration: underline;
+	position: relative;
+	left: 510px;
+}
+
+#binfo a:hover{
+	text-decoration: none;
+	color: skyblue;
+	font-size: 25px;
+}
+
+#blist{
+	color: palegoldenrod;
+}
+
+#blist a{
+	color: mediumseagreen;
+}
+
+#blist a:hover{
+	text-decoration: underline;
+	color: skyblue;
+}
+
+/********************************************************************************************/
+#borrowers{
+	height: 140px;
+	
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	overflow: auto;
+}
+
+#student_books ul li a span:hover{
+	cursor: pointer;
+	color: Turquoise ;
+}
+
+#student_info p a{
+	text-align: center;
+	padding: 3px 3px 3px 3px;
+	width: 50px;
+	position: relative;
+	float: right;
+	color: khaki;
+	text-decoration: underline;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+
+#student_info p a:hover{
+	color: #B0B0B0;
+}
+
+#student_info table{
+	margin: 15px 15px;
+	position: relative;
+	width: 80%;
+	height: 85%;
+	text-align: center;
+}	
+
+#student_info table:hover, #student_books table:hover, #avatar{
+	cursor: default;
+}
+
+#student_info table strong{
+	color: PaleGoldenRod 	;
+	font: 100% 'whack', Century Gothic;
+}
+
+/*===========================================*/
+#reserved table th, #borrowed table th{
+	padding: 2px 2px 2px 2px;
+	border-bottom: 2px solid #483F2C;
+	border-top: 2px solid #483F2C;
+}
+
+#reserved table, #borrowed table{
+	text-align: center;
+	width: 100%;
+}
+
+#reserved a, #borrowed a{
+	color: #71c837;
+	font-size: 16px;
+	font-family: 'Whack';
+	letter-spacing: 1px;
+}
+
+.admin_side a:hover, admin_side a:hover{
+	text-decoration: line-through;
+}
+
+#book_title a{
+	color: red;
+}
+/*-------------------------------------------------------------------------------*/
+
+
+/*----------------------edit.profile.php-------------------------------*/
+
+#edit_info_form{
+	font-family: Century Gothic;
+	border: 1.5px dashed sandybrown;
+	border-radius: 7px 7px 7px 7px;
+	width: 55%;
+	/*top right bottom left*/
+	padding: 15px 15px 15px 50px;
+	text-align: center;
+	position: relative;
+	left: 170px;
+}
+
+#edit_info_form table label{
+	color: turquoise;
+	font-family: 'Whack', Century Gothic, Arial;
+	width: 130%;
+	letter-spacing: 1px;
+}
+
+#edit_info_form img{
+	left: 0px;
+	border: 1.5px dashed white;
+	border-radius: 7px 7px 7px 7px;
+	height: 230px;
+	width: 180px;
+}
+
+ /*height: 44px;
+  width: 930px;
+  margin: -34px auto 0 auto;
+  background: #4e3f30;
+  background: -moz-linear-gradient(#4e3f30, #675B42);
+  background: -o-linear-gradient(#4e3f30, #675B42);
+  background: -webkit-linear-gradient(#4e3f30, #675B42);
+  border: 1px solid #483F2C;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border: 7px 7px 7px 7px;*/
+/*-------------------------------------------------------------------------------*/
+
+/*----------------------view_book_student.php----------------------------*/
+
+#student_book_info{
+	width: 500px;
+	border: 2px solid sienna;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border: 7px 7px 7px 7px;
+	position: absolute;
+	bottom: 80px;
+	left: 450px;
+}
+
+#student_book_info table{
+	width: 100%;
+	font-family: Century Gothic;
+	font-size: 16px;
+	text-align: center;
+	color: turquoise;
+}
+
+#student_book_info table strong{
+	font-family: 'Whack';
+	color: PaleGoldenRod;
+	font-weight: normal;
+	letter-spacing :1px;
+
+}
+
+/*-------------------------------------------------------------------------------*/
+
+/*----------------------search_book_student.php----------------------------*/
+
+#search_book_student_container{
+	border: 2px solid Burlywood;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: AntiqueWhite;
+	width: 30%;
+	font-family: Century Gothic;
+}
+
+#search_book_student_container{
+	border: 2px solid Burlywood;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: AntiqueWhite;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+#prompt_edit_profile aside{
+	text-align: center;
+	width: 40%;
+	padding: 2px 2px;
+	position: relative;
+	left: 270px;
+	font: 32px 'Jenna Sue';
+	color: lightblue;
+	word-spacing: 7px;
+	letter-spacing: 2.5px;
+}
+
+#prompt_view_profile aside{
+	text-align: center;
+	width: 40%;
+	padding: 2px 2px;
+	position: absolute;
+	left: 390px;
+	bottom: 290px;
+	font: 32px 'Jenna Sue';
+	color: lightblue;
+	word-spacing: 7px;
+	letter-spacing: 2.5px;
+}
+
+#prompt_view_book_admin aside{
+	text-align: center;
+	width: 40%;
+	padding: 2px 2px;
+	position: absolute;
+	left: 390px;
+	bottom: 288px;
+	font: 32px 'Jenna Sue';
+	color: lightblue;
+	word-spacing: 7px;
+	letter-spacing: 2.5px;
+}
+
+#prompt_add_book aside{
+	text-align: center;
+	width: 40%;
+	padding: 2px 2px;
+	position: absolute;
+	left: 390px;
+	bottom: 296px;
+	font: 32px 'Jenna Sue';
+	color: lightblue;
+	word-spacing: 7px;
+	letter-spacing: 2.5px;
+}
+
+#prompt_punish_unpunish aside{
+	text-align: center;
+	width: 40%;
+	padding: 2px 2px;
+	position: absolute;
+	left: 390px;
+	bottom: 296px;
+	font: 32px 'Jenna Sue';
+	color: lightblue;
+	word-spacing: 7px;
+	letter-spacing: 2.5px;
+}
+
+#prompt_edit_book aside{
+	text-align: center;
+	width: 40%;
+	padding: 2px 2px;
+	position: absolute;
+	left: 390px;
+	bottom: 296px;
+	font: 32px 'Jenna Sue';
+	color: lightblue;
+	word-spacing: 7px;
+	letter-spacing: 2.5px;
+}
+
+#prompt_signup aside{
+	text-align: center;
+	width: 40%;
+	padding: 2px 2px;
+	position: absolute;
+	left: 390px;
+	bottom: 296px;
+	font: 32px 'Jenna Sue';
+	color: lightblue;
+	word-spacing: 7px;
+	letter-spacing: 2.5px;
+}
+
+#book_image_student img{
+	border: 2px solid sienna;
+	width: 180px;
+	height: 230px;
+	position: relative;
+	top: 18px;
+	left: 15px;
+	text-align: center;
+	font: 120% Century Gothic;
+	color: LightGreen;
+	border-radius:7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border:7px 7px 7px 7px;
+}

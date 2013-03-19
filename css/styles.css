@@ -1,0 +1,694 @@
+/*------------------------------index.php----------------------------------*/
+h2.welcome{
+	position: absolute;
+	top: 210px;
+	left: 225px;
+	font: 600% 'Jenna Sue';
+}
+
+h2.welcome a{ 
+  color: #fffe89;
+}
+
+h2.welcome a:hover{
+	color: #CF2605;
+}
+
+h2.greeting{
+	position: absolute;
+	top: 260px;
+	left: 225px;
+	font: 600% 'Jenna Sue';
+}
+
+h2.greeting a{
+  color: #fffe89;
+}
+
+h2.greeting a:hover{
+	color: #CF2605;
+}
+
+#site_content { 
+  width: 930px;
+  overflow: hidden;
+  margin: 0 auto 0 auto;
+  padding: 0 0 15px 0;
+} 
+
+#index_left_container{
+	width: 420px;
+	height: auto;
+	margin: 30px 0 auto 10px;
+	background: #4e3f30;
+	border: 1px solid #242808;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	padding: 3px 10px 15px 10px;
+	opacity: 0.8;
+	overflow: scrolled;
+	position: relative;
+	top: 13px;
+	font-family: Century gothic;
+}
+
+
+#index_right_login{ 
+	width: 418px;
+	margin: 10px 0 auto 10px;
+	background: #4e3f30;
+	border: 1px solid #242808;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	/*top right bottom left*/
+	padding: 2px 15px 20px 18px;
+	opacity: 0.8;
+	font-weight: bold;	
+	position: absolute;
+	top: 275px;
+	left: 670px;
+}
+
+#index_right_signup{ 
+  width: 410px;
+  height: 385px;
+  margin: 10px 0 auto 10px;
+  background: #4e3f30;
+  border: 1px solid #242808;
+  -webkit-border-radius: 13px 13px 13px 13px; 
+  -moz-border-radius: 13px 13px 13px 13px;
+  border-radius: 13px 13px 13px 13px;
+  /*top right bottom left*/
+ padding: 10px 28px 4px 13px;
+  opacity: 0.8;
+  position: absolute;
+	top: 420px;
+   left: 670px;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+/*----------------admin_login.php----------------------------------*/
+
+#admin_login, #student_login{
+  position: relative;
+  left: 27.6%;
+  width: 410px;
+  margin: 0 0 30px 0;
+  background: #4e3f30;
+  border: 1px solid #242808;
+  -webkit-border-radius: 13px 13px 13px 13px; 
+  -moz-border-radius: 13px 13px 13px 13px;
+  border-radius: 13px 13px 13px 13px;
+  padding: 20px 20px 20px 20px;
+  opacity: 0.8;
+  text-align: center;
+  font-family: Century Gothic;
+}
+
+/*	Used in the admin_login_process.php and process_login.php	*/
+#admin_login p, #student_login p{
+	font-size: 16px;
+}
+
+#admin_login a, #student_login a{
+	text-decoration: none;
+	color: #fffe89;
+}
+
+#admin_login a:hover,  #student_login a:hover{
+	text-color: tomato;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+/*------------------------------admin_nav.php----------------------------------*/
+
+#menu_container{ 
+  width: 930px;
+  margin: 0 auto 0 auto;
+}
+
+nav { 
+  height: 44px;
+  width: 930px;
+  margin: -34px auto 0 auto;
+  background: #4e3f30;
+  background: -moz-linear-gradient(#4e3f30, #675B42);
+  background: -o-linear-gradient(#4e3f30, #675B42);
+  background: -webkit-linear-gradient(#4e3f30, #675B42);
+  border: 1px solid #483F2C;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border: 7px 7px 7px 7px;
+  
+} 
+
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------search_book_admin.php---------------------------*/
+
+.content { 
+  text-align: left;
+  width: 630px;
+  margin: 0 0 15px 0;
+  float: left;
+  font-size: 120%;
+  padding: 14px 0 0 0;
+}
+
+#search_container{
+	width: 250px;
+	float: right;
+	margin: 15px auto 0 auto;
+	background: #4e3f30;
+	border: 1px solid #242808;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	padding: 5px 15px 10px 15px;
+	opacity: 0.8;
+}
+
+#search_book_form legend{
+	text-align: left;
+	font-size: 24px;
+	font-family: 'EccentricSTD';
+	color: tomato;
+}
+
+#container{
+	width: 590px;
+	margin: 5px auto 0 auto;
+	background: #4e3f30;
+	border: 1px solid #242808;
+	float: left;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	padding: 10px 20px 15px 20px;
+	opacity: 0.8;
+	font-family: Century Gothic;
+}
+
+
+
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------sidebar.php---------------------------*/
+
+#sidebar_container{ 
+  position: absolute;
+  left: 860px;
+  bottom: 85px;
+  width: 224px;
+  padding: 20px 0 0 0;
+}
+
+#sidebar{ 
+  float: right;
+  width: auto;
+  background: #4e3f30;
+  border: 1px solid #242808;
+  -webkit-border-radius: 13px 13px 13px 13px; 
+  -moz-border-radius: 13px 13px 13px 13px;
+  border-radius: 13px 13px 13px 13px;
+  padding: 0 15px 5px 13px;
+  opacity: 0.8;
+  font: normal Century Gothic;
+}
+
+#sidebar_admin{
+  position: absolute;
+  left: 850px;
+  bottom: 100px;
+  width: 224px;
+  padding: 20px 0 0 0;
+} 
+ 
+#sidebar_search_form label{
+	color: white;
+	font-family: Century Gothic;
+}
+
+#sidebar_search_form{
+	padding: 8px 5px 8px 7px;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------admin_home.php---------------------------*/
+#book_trivia_container{
+  height: 500px;
+  width: 55%;
+  position: relative;
+  left: 20px;
+}
+
+
+/*------------------------------------------------------------------------*/
+
+
+/*-----------------------add_user_requests.php---------------------------*/
+#prompt_add_user{
+	text-align: center;
+	width: 40%;
+	padding: 2px 2px;
+	position: relative;
+	left: 230px;
+	font: 32px 'Jenna Sue';
+	color: lightblue;
+	word-spacing: 7px;
+}
+
+#user_requests_container{
+	border: 2px solid Burlywood;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: AntiqueWhite;
+}
+
+
+#user_requests_container table{
+	text-align: center;
+	font: 15px Century Gothic;
+	padding: 13px 13px 13px 13px;
+	width: 100%;
+}
+
+#user_requests_container table th{
+	color: khaki;
+	font: 16px 'Whack';
+	cursor: default; 
+	background: #4e3f30;
+	background: -moz-linear-gradient(#4e3f30, #675B42);
+	background: -o-linear-gradient(#4e3f30, #675B42);
+	background: -webkit-linear-gradient(#4e3f30, #675B42);
+	border: 1px solid #483F2C;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border: 7px 7px 7px 7px;
+}
+
+#user_requests_container table a{
+	padding: 2px 2px 2px 2px;
+	cursor: pointer; 
+	color: orange;
+}
+
+#user_requests_container table a:hover{
+	color: LightSteelBlue;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------search_user.php---------------------------*/
+
+#search_user_container{
+	border: 2px solid Burlywood;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: AntiqueWhite;
+	width: 36%;
+}
+
+
+
+#search_user_container_result{
+	border: 1px solid Burlywood;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: AntiqueWhite;
+}
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------search_user_result.php---------------------------*/
+#search_user_result_container{
+	border: 1px solid Burlywood;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: AntiqueWhite;
+}
+
+#search_user_result_container table{
+	text-align: center;
+	font: 15px Century Gothic;
+	padding: 13px 13px 13px 13px;
+	width: 100%;
+}
+
+#search_user_result_container table th{
+	color: khaki;
+	font: 16px 'Whack';
+	cursor: default; 
+	background: #4e3f30;
+	background: -moz-linear-gradient(#4e3f30, #675B42);
+	background: -o-linear-gradient(#4e3f30, #675B42);
+	background: -webkit-linear-gradient(#4e3f30, #675B42);
+	border: 1px solid #483F2C;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border-radius: 7px 7px 7px 7px;
+}
+
+#search_user_result_container table a{
+	border: 0px;
+	cursor: pointer; 
+	color: orange;
+}
+
+#search_user_result_container table a:hover{
+	color: LightSteelBlue;
+}
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------add_book.php---------------------------*/
+#add_book_container{
+	width: 80%;
+	position: relative;
+	left: 143px;
+}
+
+#add_book_form table{
+	text-align: center;
+	font: 15px Century Gothic;
+	padding: 5px 5px 5px 0px;
+	width: 100%;
+}
+
+#add_book_form{
+	font-family: Century Gothic;
+	border: 1.5px dashed sandybrown;
+	border-radius: 7px 7px 7px 7px;
+	width: 80%;
+	/*top right bottom left*/
+	padding: 12px 15px 15px 15px;
+	text-align: center;
+	position: relative;
+}
+
+#add_book_form h4{
+	text-align: center;
+	font-size: 320%;
+	font-weight: normal;
+	color: tomato;
+	font-family: 'Jenna Sue';
+}
+
+#add_book_form table label{
+	color: turquoise;
+	font-family: 'Whack', Century Gothic, Arial;
+	width: 100%;
+	letter-spacing: 1px;
+}
+/*-------------------------------------------------------------------------------*/
+
+
+
+/*-----------------------search_book_admin.php---------------------------*/
+#search_book_container{
+	border: 2px solid Burlywood;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: AntiqueWhite;
+	width: 30%;
+}
+
+#search_book_container table{
+	text-align: left;
+	font: 15px Century Gothic;
+	padding: 5px 5px 5px 5px;
+	width: 100%;
+}
+
+#search_book_container table th{
+	color: khaki;
+	font: 16px 'Whack';
+	cursor: default; 
+	background: #4e3f30;
+	background: -moz-linear-gradient(#4e3f30, #675B42);
+	background: -o-linear-gradient(#4e3f30, #675B42);
+	background: -webkit-linear-gradient(#4e3f30, #675B42);
+	border: 1px solid #483F2C;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border: 7px 7px 7px 7px;';
+}
+
+#search_book_container table a{
+	padding: 2px 2px 2px 2px;
+	cursor: pointer; 
+	color: orange;
+}
+
+#search_book_container table a:hover{
+	color: LightSteelBlue;
+}
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------search_book_admin_result.php---------------------------*/
+#search_book_admin_result_container{
+	border: 1px solid Burlywood;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+	color: AntiqueWhite;
+}
+
+#search_book_admin_result_container table{
+	text-align: center;
+	font: 15px Century Gothic;
+	padding: 13px 13px 13px 13px;
+	width: 100%;
+}
+
+#search_book_admin_result_container table th{
+	color: khaki;
+	font: 16px 'Whack';
+	cursor: default; 
+	background: #4e3f30;
+	background: -moz-linear-gradient(#4e3f30, #675B42);
+	background: -o-linear-gradient(#4e3f30, #675B42);
+	background: -webkit-linear-gradient(#4e3f30, #675B42);
+	border: 1px solid #483F2C;
+	border-radius: 7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border: 7px 7px 7px 7px;
+}
+
+
+#search_book_admin_result_container table a{
+	padding: 2px 2px 2px 2px;
+	cursor: pointer; 
+	color: orange;
+}
+
+#search_book_admin_result_container table a:hover{
+	color: LightSteelBlue;
+}
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------view_book_admin.php---------------------------*/
+
+#book_image img{
+	border: 2px solid sienna;
+	width: 180px;
+	height: 230px;
+	position: relative;
+	left: 15px;
+	top: 26px;
+	text-align: center;
+	font: 120% Century Gothic;
+	color: LightGreen;
+	border-radius:7px 7px 7px 7px;
+	-moz-border-radius: 7px 7px 7px 7px;
+	-webkit-border:7px 7px 7px 7px;
+}
+
+#book_info{
+	border: 2px solid sienna;
+	width: 700px;
+	height: auto;
+	position: absolute;
+	top: 400px;
+	left: 420px;
+	text-align: center;
+	font: 130% Century Gothic;
+	color: white;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+}
+
+#book_info p a{
+	text-align: center;
+	padding: 3px 3px 3px 3px;
+	width: 50px;
+	position: relative;
+	right: -600px;
+	bottom: -10px;
+	color: khaki;
+	text-decoration: underline;
+	font: 110% 'Whack', Century gothic, Arial;
+	letter-spacing: 1px;
+}
+
+#book_info p a:hover{
+	color: #B0B0B0;
+}
+
+#book_info table{
+	margin: 5px  5px;
+	position: relative;
+	width: auto;
+	text-align: center;
+}	
+#book_info table{
+	cursor: default;
+}
+#book_info table strong{
+	color: orange;
+	font: 100% 'whack', Century Gothic;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+/*-----------------------edit_book.php---------------------------*/
+#edit_book_container{
+	width: 75%;
+	position: relative;
+	left: 0px;
+}
+
+#edit_book_form{
+	font-family: Century Gothic;
+	border: 1.5px dashed sandybrown;
+	border-radius: 7px 7px 7px 7px;
+	width: 75%;
+	/*top right bottom left*/
+	padding: 12px 15px 15px 15px;
+	text-align: center;
+	position: relative;
+}
+
+#edit_book_form table label{
+	color: turquoise;
+	font-family: 'Whack', Century Gothic, Arial;
+	width: 100%;
+	letter-spacing: 1px;
+}
+
+#edit_book_form img{
+	left: 10px;
+	width: 180px;
+	height: 230px;
+	border: 1.5px dashed white;
+	border-radius: 7px 7px 7px 7px;
+}
+
+#edit_book_form h4{
+	text-align: center;
+	font-size: 320%;
+	font-weight: normal;
+	color: tomato;
+	font-family: 'Jenna Sue';
+}
+
+/*======================================*/
+#remove_book_container{
+	width: 400px;
+	position: absolute;
+	top: 372px;
+	left: 780px;
+}
+
+#remove_book_form table{
+	text-align: left;
+	font: 15px Century Gothic;
+	padding: 5px 5px 5px 0px;
+	width: 100%;
+}
+
+#remove_book_form{
+	font-family: Century Gothic;
+	border: 1.5px dashed sandybrown;
+	border-radius: 7px 7px 7px 7px;
+	width: 80%;
+	/*top right bottom left*/
+	padding: 12px 15px 15px 15px;
+	text-align: center;
+	position: relative;
+}
+
+#remove_book_form select{
+	font-size: 12px;
+	font-family: Century Gothic
+}
+
+#remove_book_form h4{
+	text-align: center;
+	font-size: 320%;
+	font-weight: normal;
+	color: tomato;
+	font-family: 'Jenna Sue';
+}
+
+/*-------------------------------------------------------------------------------*/
+
+#student_info_admin_side{
+	border: 2px solid sienna;
+	width: 600px;
+	height: 230px;
+	position: absolute;
+	bottom: 55px;
+	left: 420px;
+	text-align: center;
+	font: 120% Century Gothic;
+	color: Turquoise ;
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+}
+
+#student_info_admin_side p a{
+	text-align: center;
+	padding: 3px 3px 3px 3px;
+	width: 50px;
+	position: relative;
+	float: right;
+	color: khaki;
+	text-decoration: underline;
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+
+#student_info_admin_side p a:hover{
+	color: #B0B0B0;
+}
+
+#student_info_admin_side table{
+	margin: 15px 15px;
+	position: relative;
+	width: 100%;
+	height: 85%;
+	text-align: center;
+}	
+
+#student_info_admin_side table:hover{
+	cursor: default;
+}
+
+#student_info_admin_side table strong{
+	color: PaleGoldenRod 	;
+	font: 100% 'whack', Century Gothic;
+}
+
+
+

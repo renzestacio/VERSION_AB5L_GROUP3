@@ -1,23 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <?php
 	session_start();
-	require_once "include/admin_header.php";
+	require_once "include/header.php";
 ?>
 
-	<section id = "login">
-		<article id = "login_form">
-			<form action = "admin_login_process.php" method = "post">
+	<!--
+		Login form for administrators
+	-->
+
+	<div id = "admin_login">
+		<form id = "admin_form" action =  "admin_process_login.php" method = "post">
+			<fieldset>
+				<legend>Log In</legend>
+				<br/>
+				<label for = "username">Username:</label>
+				<input type = "text" name = "uname" required = "required" pattern = "[A-z0-9_]{3,}" placeholder = "minimum of 3 characters"/><br/><br/>
 				
-				<label for = "username">Username:</label><br/>
-				<input type = "text" name = "uname" required = "required" pattern = "[A-z]{3,}"/><br/><br/>
+				<label for = "password">Password:</label>
+				<input type = "password" name = "pass" required = "required" pattern = "[A-z0-9]{6,}"  placeholder = "minimum of 6 characters"/><br/><br/><br/>
 				
-				<label for = "password">Password:</label><br/>
-				<input type = "password" name = "pass" required = "required" pattern = "[A-z0-9]{6,}"/><br/><br/>
+				<input class = "submit" type = "submit" value = "Log In" />
 				
-				<input type = "submit" value = "Log In" />
-			</form>
-		</article>
-	</section>
+			</fieldset>
+		</form>
+	</div>
 
 <?php
-	require_once "include/admin_footer.php";
+	require_once "include/footer.php";
 ?>

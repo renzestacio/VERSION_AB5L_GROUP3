@@ -1,0 +1,262 @@
+/*	FONTS	*/
+@font-face { 
+	/*Used in <h2> tags.*/
+  font-family: Jenna Sue; 
+    src: url('../fonts/JennaSue-webfont.eot'); 
+    src: local("Jenna Sue"), url('../fonts/JennaSue-webfont.ttf'); 
+} 
+
+@font-face { 
+	/*Used for the logo_colour which displays "The Athenaeum".*/
+  font-family: MediciText; 
+    src: url('../fonts/MediciText.otf'); 
+}
+
+@font-face{
+	/*Used for the <legend> tags. */
+	font-family:EccentricSTD;
+	src:url('../fonts/ECCENTRICSTD.otf');
+}
+
+@font-face{
+	/*Used for the <legend> tags. */
+	font-family:Whack;
+	src:url('../fonts/Whack.ttf');
+}
+
+@font-face{
+	/*Used for the <legend> tags. */
+	font-family:Airmole;
+	src:url('../fonts/airmole.ttf');
+}
+
+@font-face{
+	/*Used for the <legend> tags. */
+	font-family:bubblegums;
+	src:url('../fonts/BubbleGums.ttf');
+}
+
+@font-face{
+	/*Used for the <legend> tags. */
+	font-family:nick;
+	src:url('../fonts/NickelodeonNF.ttf');
+}
+
+@font-face{
+	/*Used for the <h2> tags. */
+	font-family:brush;
+	src:url('../fonts/BRUSHSCI.ttf');
+}
+
+/*  CSS RULES FOR GENERAL HTML TAGS */
+* { 
+  margin: 0;
+  padding: 0;
+  font-style: Century Gothic;
+}
+
+html { 
+  height: 100%;
+}
+
+
+
+article, aside, figure, footer, header, hgroup, nav, section { 
+/* tell the browser to render HTML 5 elements as block */
+  display:block;
+}
+
+body { 
+  font-size: .80em;
+  background-attachment: fixed;
+  background-image: url(../images/bglibrary2.jpg);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-color: black;
+  color: #FFF;
+}
+
+h1, h2,h3,h4,h5,h6{ 
+  letter-spacing: 0em;
+  padding: 0 0 10px 0;
+  font-size: 140%;
+  margin: 0 0 0 0;
+}
+
+h2{ 
+  font-size: 160%;
+  padding: 0 0 10px 0;
+  color: #fffe89;
+}
+
+h4{ 
+  color: #E2E03E;
+  padding: 10px 0px 0px 0px;
+  font: normal 250% 'Jenna Sue', arial, sans-serif;
+}
+
+a{ 
+  outline: none;
+  text-decoration: none;
+  color: #CF2605;
+}
+
+img{
+	-webkit-border-radius: 13px 13px 13px 13px; 
+	-moz-border-radius: 13px 13px 13px 13px;
+	border-radius: 13px 13px 13px 13px;
+
+}
+
+
+/* GENERAL CSS RULES FOR FORMS*/
+.form_settings{ 
+  margin: 15px 0 0 0;
+  font-family: Century Gothic;
+}
+
+label{
+	color: white;
+	font-size: 15px;
+	font-weight: normal;
+}
+
+.form_settings legend, #admin_form legend,#search_book_form legend, #sidebar_search_form legend{
+	font-size: 200%;
+	font-weight: normal;
+	color: tomato;
+	font-family: 'EccentricSTD';
+}
+
+.form_settings span { 
+  float: left; 
+  width: 200px; 
+  text-align: center;
+}
+
+.form_settings input, #admin_form input, #search_book_form input, #sidebar_search_form input,
+#edit_book_form input, #edit_info_form input, #search_book_student_form input, #remove_book_form input,
+#add_book_form input{ 
+  padding: 2px;  
+  font-size: 100% Century Gothic; 
+  border: 1px solid #6F6147; 
+  background: #EFF8FB; 
+  color: black;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border: 5px 5px 5px 5px;
+  width: auto;
+}
+  
+.form_settings .submit ,#admin_form .submit, #search_book_form .submit, #sidebar_search_form .submit,
+ #remove_book_form .submit,  #edit_book_form .submit, #edit_info_form .submit,
+ #search_book_student_form .submit, #add_book_form .submit{ 
+  font-family: 250% ,Century Gothic;
+  border: 0; 
+  width: 100px;
+  height: 33px;
+  cursor: pointer; 
+  background: #675B42; /* Show a solid color for older browsers */
+  background: -moz-linear-gradient(#9C8563, #675B42);
+  background: -o-linear-gradient(#9C8563, #675B42);
+  background: -webkit-linear-gradient(#9C8563, #675B42);
+  border: 1px solid #483F2C;
+  border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+  -webkit-border: 5px 5px 5px 5px;
+  color: #fffe89;
+}
+
+.form_settings .checkbox { 
+  margin: 4px 0; 
+  padding: 0; 
+  width: 14px;
+  border: 0;
+  background: none;
+}
+
+/*------------------------------include/header.php----------------------------------*/
+
+#main{
+	margin: 50px auto;
+	width: 1000px;
+	border-radius: 13px 13px 13px 13px;
+	-moz-border-radius: 13px 13px 13px 13px;
+	-webkit-border: 13px 13px 13px 13px;
+	background: transparent url(../images/80_greybrown.png);
+	padding-bottom: 30px;
+}
+
+header { 
+  background: transparent;
+  height: 179px;
+}
+
+#logo { 
+  width: 930px;
+  height: 179px;
+  background: transparent;
+  color: #888;
+  padding: 0;
+}
+
+#logo h1, #logo h2 { 
+  font-size: 540%;
+  border-bottom: 0;
+  text-transform: none;
+  margin: 0;
+}
+
+#logo_text hgroup h1, #logo_text hgroup h1 a { 
+  padding: 20px 0 0 0;
+  color: #FFF;
+  text-decoration: none;
+  font-family: 'MediciText';
+  font-weight: normal;
+}
+
+#logo_text h1 a .logo_colour { 
+  color: tomato;
+}
+
+#logo_text a:hover .logo_colour { 
+  color: #ebcf94;
+}
+
+#logo_text h2 { 
+  font-size: 130%;
+  padding: 0 0 0 0;
+  font-family: 'brush';
+  color:#ebcf94;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+/*-------------------------------------------------------------------------------*/
+
+/*------------------------------include/footer.php----------------------------------*/
+
+footer { 
+  width: 930px;
+  font-size: 110%;
+  height: 30px;
+  margin: 0 auto 0 auto;
+  padding: 5px 0 0 0;
+  text-align: center; 
+  background: #675B42; /* Show a solid color for older browsers */
+  background: -moz-linear-gradient(#4e3f30, #675B42);
+  background: -o-linear-gradient(#4e3f30, #675B42);
+  background: -webkit-linear-gradient(#4e3f30, #675B42);
+  border: 1px solid #483F2C;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border: 7px 7px 7px 7px;
+}
+
+footer p { 
+  line-height: 1.7em;
+  padding: 0 0 10px 0;
+  font-family: Century Gothic;
+}
+
+/*-------------------------------------------------------------------------------*/
